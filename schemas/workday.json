@@ -1,0 +1,51 @@
+{
+  "workday": {
+    "identity": {
+      "date": "YYYY-MM-DD",
+      "timezone": "Europe/Prague",
+      "driver_id": "local-anonymous-id"
+    },
+
+    "events": [
+      {
+        "timestamp": "YYYY-MM-DDTHH:MM:SS",
+        "activity": "drive",
+        "location": {
+          "country": "ISO-3166-1-alpha-2",
+          "region": "optional"
+        },
+        "source": "tachograph"
+      },
+      {
+        "timestamp": "YYYY-MM-DDTHH:MM:SS",
+        "activity": "work",
+        "location": {
+          "country": "ISO-3166-1-alpha-2"
+        },
+        "source": "manual"
+      }
+    ],
+
+    "derived_intervals": [
+      {
+        "start": "YYYY-MM-DDTHH:MM:SS",
+        "end": "YYYY-MM-DDTHH:MM:SS",
+        "activity": "drive",
+        "location": {
+          "country": "ISO-3166-1-alpha-2",
+          "region": "optional"
+        },
+        "confidence": "certain"
+      },
+      {
+        "start": "YYYY-MM-DDTHH:MM:SS",
+        "end": "YYYY-MM-DDTHH:MM:SS",
+        "activity": "work",
+        "location": {
+          "country": "ISO-3166-1-alpha-2"
+        },
+        "confidence": "inferred"
+      }
+    ]
+  }
+}
