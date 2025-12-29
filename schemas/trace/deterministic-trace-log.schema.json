@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://odws.dev/schema/deterministic-trace-log",
+  "title": "Deterministic Trace Log Entry",
+  "description": "Normative schema for a single Deterministic Trace Log entry as defined by ODWS.",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "sequence",
+    "timestamp",
+    "component",
+    "operation",
+    "input_ref",
+    "output_ref",
+    "decision",
+    "reason",
+    "confidence"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "description": "Unique identifier of the processing run."
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonic sequence number of the trace entry."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Technical timestamp of entry creation (non-legal)."
+    },
+    "component": {
+      "type": "string",
+      "description": "System component producing this trace entry."
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "READ",
+        "INTERPRET",
+        "DERIVE",
+        "MERGE",
+        "SPLIT",
+        "IGNORE",
+        "FLAG",
+        "FINALIZE"
+      ],
+      "description": "Type of operation performed."
+    },
+    "input_ref": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ],
+      "description": "Reference(s) to input entity or entities."
+    },
+    "output_ref": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ],
+      "description": "Reference(s) to output entity or entities."
+    },
+    "decision": {
+      "type": "string",
+      "description": "Explicit description of the decision taken."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Justification for the decision."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Certainty level of the decision."
+    }
+  },
+  "additionalProperties": false
+}
