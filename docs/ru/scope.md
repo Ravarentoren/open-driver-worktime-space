@@ -1,81 +1,84 @@
 > ⚠ This file is auto-generated from docs/en/scope.md.
 > Do not edit manually.
 
-# Scope projektu ODWS
+# Project Scope
 
-Tento dokument vymezuje rozsah projektu
-Open Driver Worktime Space (ODWS).
+This document defines the scope
+of the Open Driver Worktime Space (ODWS) project.
 
-Cílem je jasně definovat, co projekt řeší,
-a stejně jasně, co řešit nebude.
-
----
-
-## 1. Co projekt řeší
-
-ODWS řeší výpočet a transparentní popis:
-
-- pracovní doby řidiče
-- časů započitatelných a nezapočitatelných do práce
-- základních návazných nároků vyplývajících z odpracované doby
-
-Projekt se soustředí na:
-
-- **reálná provozní data**
-- **deterministické výpočty**
-- **offline-first použití**
-- **auditovatelný a opakovatelný výsledek**
-
-Výstupem systému je vždy:
-- výsledek výpočtu
-- vysvětlení, jak k němu systém dospěl
-- identifikace použitého výkladového modelu
+Its purpose is to clearly specify
+what the project addresses
+and, equally clearly, what it does not.
 
 ---
 
-## 2. Co projekt záměrně neřeší
+## 1. What the Project Covers
 
-ODWS záměrně:
+ODWS addresses the computation
+and transparent description of:
 
-- nenahrazuje právní poradenství
-- není autoritativním výkladem práva
-- nerozhoduje spory
-- nenese odpovědnost za konečné mzdové rozhodnutí
-- nenahrazuje účetní ani mzdový software
+- driver working time
+- time included and excluded from work
+- basic work-related entitlements
+  derived from performed work time
 
-Projekt:
-- **počítá**
-- **nevynucuje rozhodnutí**
+The project focuses on:
 
----
+- **real operational data**
+- **deterministic computation**
+- **offline-first usage**
+- **auditable and reproducible results**
 
-## 3. První stabilní rozsah (Phase 1)
-
-První stabilní fáze projektu se omezuje na:
-
-- zpracování pracovního času řidiče
-- základní časové kategorie (práce, pohotovost, odpočinek)
-- lokální zpracování dat bez závislosti na cloudu
-- referenční výstupy ve strojově čitelném formátu
-
-V této fázi nejsou cílem:
-
-- plné mzdové výpočty
-- integrace do účetních systémů
-- komplexní legislativní pokrytí
-- automatizace státní komunikace
+The system output always consists of:
+- a computed result
+- an explanation of how the result was obtained
+- identification of the interpretative model used
 
 ---
 
-## 4. Zásada rozšiřování
+## 2. What the Project Intentionally Does Not Cover
 
-Rozšíření rozsahu projektu je možné pouze:
+ODWS intentionally:
 
-- explicitním rozhodnutím
-- s ohledem na zachování jednoduchosti
-- bez narušení deterministického jádra
+- does not replace legal advice
+- is not an authoritative interpretation of law
+- does not resolve disputes
+- does not assume responsibility for final wage decisions
+- does not replace accounting or payroll systems
 
-Každé rozšíření musí:
-- být oddělitelné
-- být volitelné
-- nesmí narušit existující výpočty
+The project:
+- **computes**
+- **does not enforce decisions**
+
+---
+
+## 3. First Stable Scope (Phase 1)
+
+The first stable phase of the project is limited to:
+
+- processing driver working time
+- basic time categories (work, availability, rest)
+- local data processing without cloud dependency
+- reference outputs in machine-readable formats
+
+This phase does NOT aim to provide:
+
+- full payroll calculations
+- accounting system integrations
+- comprehensive legislative coverage
+- automated communication with public authorities
+
+---
+
+## 4. Extension Principles
+
+The project scope may be extended only by:
+
+- explicit decision
+- preservation of simplicity
+- without breaking core determinism
+
+Any extension MUST:
+- be separable
+- be optional
+- not disrupt existing computations

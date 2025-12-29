@@ -1,186 +1,204 @@
 > ⚠ This file is auto-generated from docs/en/workday.md.
 > Do not edit manually.
 
-# Pracovní den řidiče – jádrový datový model (Workday)
+# Driver Workday – Core Data Model (Workday)
 
-Tento dokument definuje **jádrový datovy model pracovního dne řidiče**
-v rámci projektu Open Driver Worktime Space (ODWS).
+This document defines the **core data model of a driver's workday**
+within the Open Driver Worktime Space (ODWS) project.
 
-Model popisuje výhradně **reálně existující fakta práce**.
-Neobsahuje ekonomické, mzdové ani právni interpretace.
+The model describes **observable, real-world work facts only**.
+It does not include economic, wage-related, or legal interpretations.
 
-Slouží jako vstup pro deterministické výpočty v jádru systému.
-
----
-
-## 1. Základní principy
-
-Jádrový model pracovního dne:
-
-- popisuje **co se skutečně dělo**
-- odděluje realitu od jejího výkladu
-- je nezávislý na mzdových a právních konstruktech
-- je použitelný napříč státy a systémy
-
-Model je navržen tak, aby:
-
-- byl dlouhodobě udržitelný
-- byl auditovatelný
-- umožňoval různé výkladové nadstavby
-  bez zkreslení vstupních dat
-
-Model je navržen s vědomím, že vstupní data mohou obsahovat chyby způsobené lidským faktorem a provozním stresem.
-
-Chybějící, duplicitní nebo časově nesprávně zadané údaje nejsou považovány za výjimku, ale za běžnou součást reality pracovního dne.
+It serves as input for deterministic computation
+in the core of the system.
 
 ---
 
-## 2. Identita pracovního dne
+## 1. Fundamental Principles
 
-Každý pracovní den MUSÍ být jednoznačně identifikovatelný.
+The core workday model:
 
-Minimální identita zahrnuje:
+- describes **what actually happened**
+- separates reality from its interpretation
+- is independent of wage and legal constructs
+- is applicable across states and systems
 
-- datum pracovního dne
-- časové pásmo
-- lokální anonymní identifikátor řidiče
+The model is designed to:
 
-Identita slouží výhradně
-k jednoznačnému určení záznamu a nemá právní ani osobní význam.
+- be long-term sustainable
+- be auditable
+- allow multiple interpretative layers
+  without distorting the underlying data
 
----
+The model explicitly assumes that input data
+may contain errors caused by human factors
+and operational stress.
 
-## 3. Časové úseky práce
-
-Pracovní den je tvořen **posloupností časových úseků**.
-
-Každý časový úsek má:
-
-- čas začátku
-- čas konce
-- typ činnosti
-- stát výkonu práce
-
-Časové úseky se nesmí překrývat a musí tvořit souvislou časovou osu dne.
+Missing, duplicated, or temporally incorrect inputs
+are not treated as exceptions,
+but as a normal part of real-world workday data.
 
 ---
 
-## 4. Události (záznam reality)
+## 2. Workday Identity
 
-Pracovní den může obsahovat surové časové události, které reprezentují jednotlivé záznamy o činnosti řidiče.
+Each workday MUST be uniquely identifiable.
 
-Událost je okamžik v čase, kdy došlo ke změně stavu, nebo byla zaznamenána informace.
+The minimum identity consists of:
 
-Události mohou vznikat:
-- automaticky (tachograf)
-- ručně (řidič)
-- importem externích dat
+- calendar date of the workday
+- time zone
+- local anonymous driver identifier
 
-Události mohou vykazovat následující vlastnosti:
-
-- chybějící začátek nebo konec
-- časové pořadí neodpovídající realitě
-- duplicitní nebo vícenásobné záznamy
-
-Tyto vlastnosti nejsou považovány za chybu modelu, ale za věrný záznam skutečného provozu.
+The identity exists solely to uniquely reference the record
+and has no legal or personal meaning.
 
 ---
 
-## 5. Odvozené časové intervaly
+## 3. Time Segments
 
-Časové intervaly práce jsou odvozovány až na základě surových událostí.
+A workday consists of a **sequence of time segments**.
 
-Odvozený interval:
-- má definovaný začátek a konec
-- odpovídá konkrétnímu typu činnosti
-- může nést informaci o míře jistoty výpočtu
+Each time segment has:
 
-Odvození intervalů je deterministický proces, který nesmí měnit původní surová data.
+- start time
+- end time
+- activity type
+- country of work performance
 
-Jádro ODWS NESMÍ surová data tiše opravovat.
-
-Jakákoli korekce, doplnění nebo interpretace
-musí být:
-- explicitní
-- dohledatelná
-- oddělená od původního záznamu.
+Time segments MUST NOT overlap
+and MUST form a continuous timeline of the day.
 
 ---
 
-## 6. Typy činností (jádrové)
+## 4. Events (Reality Records)
 
-Jádro ODWS pracuje výhradně
-s následujícími typy činností:
+A workday MAY contain raw time events
+representing individual records of driver activity.
 
-- **jízda**
-- **práce**
-- **odpočinek**
+An event is a point in time
+at which a state change occurred
+or information was recorded.
 
-Tyto typy popisují **reálný fyzický stav řidiče**
-a jsou považovány za základní fakta pracovního dne.
+Events may originate from:
 
-Žádné další typy činností nejsou v jádrupřípustné.
+- automatic sources (tachograph)
+- manual input (driver)
+- external data imports
 
----
+Events may exhibit the following characteristics:
 
-## 7. Geografický kontext práce
+- missing start or end
+- temporal order not matching reality
+- duplicate or repeated records
 
-Každý časový úsek MUSÍ být přiřazen
-ke konkrétnímu státu výkonu práce.
-
-Změna státu:
-
-- je evidována jako časová událost
-- není považována za činnost
-- slouží k určení rozsahu práce
-
-vykonané na jednotlivých správních územích
-
-Geografický kontext je považován
-za **jádrový fakt pracovního dne** vyplývající z evropského právního rámce.
+These characteristics are not considered model errors,
+but faithful representations of real operational conditions.
 
 ---
 
-## 8. Zdroje dat
+## 5. Derived Time Intervals
 
-Záznam pracovního dne může vzniknout z různých zdrojů:
+Time intervals are derived
+only from raw events.
 
-- digitální tachograf
-- ruční zadání
-- import externího souboru
+A derived interval:
 
-Zdroj dat:
+- has a defined start and end
+- corresponds to a specific activity type
+- MAY carry a confidence level
 
-- je evidován pro auditní účely
-- nemá vliv na výpočet
-- neslouží k hodnocení správnosti záznamu
+Derivation is a deterministic process
+that MUST NOT modify original raw data.
 
----
+The ODWS core MUST NOT silently correct raw inputs.
 
-## 9. Výslovně vyloučené pojmy
+Any correction, completion, or interpretation MUST be:
 
-Jádrový model ZÁMĚRNĚ NEOBSAHUJE pojmy:
-
-- pohotovost
-- jiná činnost
-
-Tyto pojmy nejsou považovány
-za popis reality práce řidiče,
-ale za technické nebo ekonomicko-právní konstrukty.
-
-Mohou být případně **odvozeny až v nadstavbových vrstvách**
-na základě jádrových faktů,
-nikoliv součástí tohoto modelu.
+- explicit
+- traceable
+- separated from the original record
 
 ---
 
-## 10. Rozšiřitelnost modelu
+## 6. Core Activity Types
 
-Rozšíření modelu je možné pouze:
+The ODWS core operates exclusively
+with the following activity types:
 
-- přidáním nových nadstavbových struktur
-- bez změny významu jádrových dat
-- bez narušení determinismu výpočtů
+- **driving**
+- **work**
+- **rest**
 
-Jádrový model musí zůstat stabilní,
-i pokud se změní výklad, právo nebo ekonomické podmínky.
+These types describe the **actual physical state of the driver**
+and are considered fundamental workday facts.
+
+No additional activity types
+are permitted within the core model.
+
+---
+
+## 7. Geographic Work Context
+
+Each time segment MUST be associated
+with a specific country of work performance.
+
+A country change:
+
+- is recorded as a time event
+- is not considered an activity
+- serves to determine the scope of work
+  performed within individual jurisdictions
+
+Geographic context is considered
+a **core workday fact**
+arising from the European regulatory framework.
+
+---
+
+## 8. Data Sources
+
+A workday record MAY originate
+from multiple data sources:
+
+- digital tachograph
+- manual input
+- external file import
+
+The data source:
+
+- is recorded for audit purposes
+- has no influence on computation
+- is not used to assess record correctness
+
+---
+
+## 9. Explicitly Excluded Concepts
+
+The core model INTENTIONALLY EXCLUDES concepts such as:
+
+- on-call duty
+- other work
+
+These concepts are not considered
+descriptions of physical work reality,
+but technical or economic-legal constructs.
+
+They MAY be derived
+only in higher-level interpretative layers
+based on core facts,
+and MUST NOT be part of this model.
+
+---
+
+## 10. Model Extensibility
+
+The model MAY be extended only by:
+
+- adding higher-level structures
+- without changing the meaning of core data
+- without breaking deterministic computation
+
+The core model MUST remain stable
+even if interpretation, law,
+or economic conditions change.

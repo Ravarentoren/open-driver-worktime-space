@@ -1,69 +1,76 @@
-# Vize projektu ODWS
+# Project Vision
 
-Open Driver Worktime Space (ODWS) vzniká jako reakce
-na dlouhodobý nesoulad mezi reálnou prací řidičů
-a způsobem, jakým je tato práce evidována a vyhodnocována.
+Open Driver Worktime Space (ODWS) was created
+in response to a long-term mismatch between
+the real work performed by drivers
+and the way this work is recorded and evaluated.
 
-Projekt nevzniká jako politický nástroj ani jako produkt.
-Vzniká jako **otevřený technický základ**, který má umožnit
-pravdivý a přezkoumatelný popis reality práce.
+The project is not a political instrument
+and not a commercial product.
 
----
-
-## 1. Základní myšlenka
-
-ODWS vychází z jednoduchého předpokladu:
-
-- práce existuje dříve než její výklad
-- data existují dříve než rozhodnutí
-- výpočet musí být oddělen od moci
-
-Cílem projektu je vytvořit takový systém,
-který umožní práci **spočítat a vysvětlit**,
-aniž by vnucoval jediný správný závěr.
+It exists as an **open technical foundation**
+intended to enable a truthful
+and reviewable description of work reality.
 
 ---
 
-## 2. Neutralita a otevřenost
+## 1. Core Idea
 
-ODWS neusiluje o autoritu.
+ODWS is based on a simple assumption:
 
-Projekt:
-- nenahrazuje lidské rozhodování
-- nenahrazuje právo
-- nenahrazuje vyjednávání
+- work exists before its interpretation
+- data exists before decisions
+- computation must be separated from power
 
-Místo toho poskytuje:
-- otevřený výpočetní model
-- transparentní pravidla
-- opakovatelný výsledek
+The goal of the project is to create a system
+that allows work to be **calculated and explained**
+without enforcing a single correct conclusion.
 
 ---
 
-## 3. Dlouhodobý cíl
+## 2. Neutrality and Openness
 
-Dlouhodobým cílem ODWS není dominance,
-ale **použitelnost napříč generacemi**.
+ODWS does not seek authority.
 
-Projekt má být:
-- přenositelný
-- převzatelný
-- udržitelný bez závislosti na jednotlivcích
+The project:
+- does not replace human decision-making
+- does not replace law
+- does not replace negotiation
 
-Úspěchem projektu není popularita,
-ale fakt, že jej lze použít i bez znalosti jeho autorů.
+Instead, it provides:
+- an open computational model
+- transparent rules
+- reproducible results
 
 ---
 
-## 4. Vztah k realitě
+## 3. Long-Term Goal
 
-ODWS je navržen s vědomím,
-že realita je neúplná, proměnlivá a někdy rozporná.
+The long-term goal of ODWS is not dominance,
+but **usability across generations**.
 
-Projekt proto:
-- přiznává nejistotu
-- umožňuje více výkladů
-- neprodává falešnou jistotu
+The project is designed to be:
+- portable
+- transferable
+- sustainable without dependency on individuals
 
-Tato zdrženlivost je záměrná
-a považovaná za jednu z hlavních hodnot projektu.
+Success is not measured by popularity,
+but by the fact that the system can be used
+without knowledge of its original authors.
+
+---
+
+## 4. Relationship to Reality
+
+ODWS is designed with the awareness
+that reality is incomplete, variable,
+and sometimes contradictory.
+
+The project therefore:
+- acknowledges uncertainty
+- allows multiple interpretations
+- does not sell false certainty
+
+This restraint is intentional
+and is considered one of the core values
+of the project.
