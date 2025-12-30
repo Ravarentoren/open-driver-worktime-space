@@ -93,6 +93,12 @@ Each time segment has:
 Time segments MUST NOT overlap
 and MUST form a continuous timeline of the day.
 
+The model allows an arbitrary number of work segments
+within a single calendar day.
+
+There is no fixed limit on the number of work periods
+as long as they respect daily rest boundaries.
+
 ---
 
 ## 5. Events (Reality Records)
