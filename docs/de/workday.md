@@ -40,7 +40,31 @@ but as a normal part of real-world workday data.
 
 ---
 
-## 2. Workday Identity
+## 2. Core Work Time Computation Rule
+
+The ODWS core always computes the full work period.
+
+Work time is defined as the entire time interval
+between the end of one daily rest
+and the beginning of the next daily rest.
+
+Within this interval:
+- all time is included in work time computation,
+- no segments are excluded based on activity type,
+- activity labels do not affect inclusion.
+
+This includes:
+- driving,
+- work,
+- other activities,
+- any rest segments occurring within the work period.
+
+Activity types serve descriptive and analytical purposes only.
+They MUST NOT influence core work time computation.
+
+---
+
+## 3. Workday Identity
 
 Each workday MUST be uniquely identifiable.
 
@@ -55,7 +79,7 @@ and has no legal or personal meaning.
 
 ---
 
-## 3. Time Segments
+## 4. Time Segments
 
 A workday consists of a **sequence of time segments**.
 
@@ -71,7 +95,7 @@ and MUST form a continuous timeline of the day.
 
 ---
 
-## 4. Events (Reality Records)
+## 5. Events (Reality Records)
 
 A workday MAY contain raw time events
 representing individual records of driver activity.
@@ -97,7 +121,7 @@ but faithful representations of real operational conditions.
 
 ---
 
-## 5. Derived Time Intervals
+## 6. Derived Time Intervals
 
 Time intervals are derived
 only from raw events.
@@ -121,7 +145,7 @@ Any correction, completion, or interpretation MUST be:
 
 ---
 
-## 6. Core Activity Types
+## 7. Core Activity Types
 
 The ODWS core operates exclusively
 with the following activity types:
@@ -138,7 +162,7 @@ are permitted within the core model.
 
 ---
 
-## 7. Geographic Work Context
+## 8. Geographic Work Context
 
 Each time segment MUST be associated
 with a specific country of work performance.
@@ -156,7 +180,7 @@ arising from the European regulatory framework.
 
 ---
 
-## 8. Data Sources
+## 9. Data Sources
 
 A workday record MAY originate
 from multiple data sources:
@@ -173,7 +197,7 @@ The data source:
 
 ---
 
-## 9. Explicitly Excluded Concepts
+## 10. Explicitly Excluded Concepts
 
 The core model INTENTIONALLY EXCLUDES concepts such as:
 
@@ -191,7 +215,7 @@ and MUST NOT be part of this model.
 
 ---
 
-## 10. Model Extensibility
+## 11. Model Extensibility
 
 The model MAY be extended only by:
 
