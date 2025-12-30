@@ -162,3 +162,22 @@ ODWS explicitly:
 - prioritizes physical and operational reality
 
 This document serves as a permanent reference for those principles.
+
+---
+
+## 11. Shift Duration and Compensation Separation
+
+Shift duration is a safety control construct only.
+
+It exists solely for:
+- road safety regulation,
+- fatigue management,
+- compliance monitoring.
+
+Shift duration:
+- has no effect on wage computation,
+- must not limit paid work time,
+- must not be used as a payroll metric.
+
+Compensation is based on the performed work period
+as defined independently from shift duration limits.
