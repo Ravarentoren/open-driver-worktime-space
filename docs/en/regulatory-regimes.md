@@ -71,14 +71,14 @@ in higher-level regulatory interpretation layers.
 
 Regulatory regime MAY be represented as metadata, for example:
 
-```json
+json
 {
 "regulatory_regime": "ES561"
 }
 
 or
 
-```json
+json
 {
 "regulatory_regime": "AETR"
 }
