@@ -137,3 +137,6 @@ DTL records how decisions were made.
 It does not prescribe legal, economic, or political interpretation.
 
 DTL exists to describe reality, not to enforce conclusions.
+
+DTL explicitly includes human corrections and amendments
+as first-class deterministic inputs.
