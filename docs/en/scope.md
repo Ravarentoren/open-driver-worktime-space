@@ -79,3 +79,11 @@ Any extension MUST:
 - be separable
 - be optional
 - not disrupt existing computations
+
+ODWS explicitly includes
+on-demand deterministic computation
+as part of its normative scope.
+
+Systems that only compute results
+after legal or administrative finalization
+are outside the scope of ODWS.

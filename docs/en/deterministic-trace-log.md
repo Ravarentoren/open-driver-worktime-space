@@ -121,7 +121,25 @@ all fields MUST be bitwise identical.
 
 ---
 
-## 7. Relationship to ODWS
+## 7. On-Demand Computation Entries
+
+DTL MUST record computations
+performed before legal or administrative finalization.
+
+Such entries MUST include:
+
+- computation_state = INFORMATIONAL
+- assumed or proposed input values
+- explicit note that recomputation may occur
+
+On-demand computations:
+- are not provisional guesses,
+- are fully deterministic,
+- remain auditable permanently.
+
+Absence of a final legal act
+MUST NOT prevent computation or logging.
+## 8. Relationship to ODWS
 
 DTL is part of the ODWS specification itself,
 not an implementation detail.
@@ -131,7 +149,7 @@ MUST fully implement Deterministic Trace Log behavior.
 
 ---
 
-## 8. Purpose Limitation
+## 9. Purpose Limitation
 
 DTL records how decisions were made.
 It does not prescribe legal, economic, or political interpretation.

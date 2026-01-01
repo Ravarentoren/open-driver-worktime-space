@@ -109,7 +109,17 @@ Absence of this field implies default statutory rules.
 
 ---
 
-## 4. What Is Explicitly NOT an Input
+## 4. Anticipated Termination Inputs
+
+Termination input facts MAY be recorded
+before legal effectiveness of termination.
+
+ODWS supports anticipation-based input
+to enable timely computation.
+
+---
+
+## 5. What Is Explicitly NOT an Input
 
 The following MUST NOT be entered as input:
 
@@ -122,7 +132,7 @@ These are derived values.
 
 ---
 
-## 5. Correctability
+## 6. Correctability
 
 Termination input facts MUST be correctable.
 
@@ -133,7 +143,7 @@ Corrections:
 
 ---
 
-## 6. Relationship to Other ODWS Models
+## 7. Relationship to Other ODWS Models
 
 This input model:
 - feeds termination computation,
