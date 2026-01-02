@@ -1,7 +1,7 @@
 # Open Driver Worktime Space (ODWS)
 
-> Deterministic, auditable computation of driver worktime  
-> grounded in reality, not assumptions.
+Deterministic, auditable computation of driver worktime  
+grounded in reality, not assumptions.
 
 ODWS is an open specification and reference space  
 for recording, correcting, and computing professional driver worktime  
@@ -71,7 +71,7 @@ Documentation is:
 - machine-processable
 - available in multiple languages
 
-> If it is not written down, it does not exist.
+ If it is not written down, it does not exist.
 
 ---
 
@@ -79,7 +79,7 @@ Documentation is:
 
 This repository defines the **ODWS specification**.
 
-A reference implementation and product-oriented repository
+ A reference implementation and product-oriented repository
 is developed separately:
 
 ➡️ https://github.com/Ravarentoren/odws-compensation-engine
