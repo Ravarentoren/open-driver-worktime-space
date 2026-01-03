@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/operational-realities.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Operational Realities of Driver Worktime Recording
 
 This document describes real-world operational conditions observed in daily

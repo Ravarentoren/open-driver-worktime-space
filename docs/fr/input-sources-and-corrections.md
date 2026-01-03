@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/input-sources-and-corrections.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Input Sources and Corrections
 
 This document defines all permitted input sources

@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/regulatory-regimes.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Regulatory Regimes and Applicability Context
 
 This document defines how regulatory regimes relate to the

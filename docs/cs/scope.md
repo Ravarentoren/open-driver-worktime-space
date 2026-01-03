@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/scope.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Project Scope
 
 This document defines the scope

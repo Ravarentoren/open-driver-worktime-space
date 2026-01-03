@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/vacation-entitlement-computation.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Vacation Entitlement – Deterministic Computation
 
 This document defines how vacation entitlement

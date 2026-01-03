@@ -1,3 +1,9 @@
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # On-Demand Deterministic Computation
 
 This document defines the principle of

@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/on-demand-deterministic-computation.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # On-Demand Deterministic Computation
 
 This document defines the principle of

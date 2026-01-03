@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/waiting-standby-and-other-work.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: normative
+-->
+
+
 # Waiting, Standby, and “Other Work”
 ## in the Profession of a Professional Driver
 

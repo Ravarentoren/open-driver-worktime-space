@@ -1,3 +1,9 @@
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Vacation Entitlement – Deterministic Computation
 
 This document defines how vacation entitlement

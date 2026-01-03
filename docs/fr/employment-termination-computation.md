@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/employment-termination-computation.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Employment Termination – Deterministic Computation
 
 This document defines how the **termination date**

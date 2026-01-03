@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/vacation-entitlement-input.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Vacation Entitlement – Input Facts
 
 This document defines factual input data

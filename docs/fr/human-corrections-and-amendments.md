@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/human-corrections-and-amendments.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Human Corrections and Amendments
 
 This document defines the role of human correction

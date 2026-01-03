@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/employment-termination-input.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Employment Termination – Input Facts
 
 This document defines the **input facts** related to the termination

@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/human-context.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Human and Local Context Principles
 
 ODWS is built on the understanding that work is performed by people,

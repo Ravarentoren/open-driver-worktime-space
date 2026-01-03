@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/vision.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Project Vision
 
 Open Driver Worktime Space (ODWS) was created

@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/deterministic-trace-log.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Deterministic Trace Log (DTL)
 
 The Deterministic Trace Log (DTL) is a mandatory, normative component

@@ -1,3 +1,9 @@
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Absence and Non-Availability Recording
 
 This document defines how absences and non-availability are represented

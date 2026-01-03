@@ -1,3 +1,9 @@
+<!--
+odws:
+  layer: normative
+-->
+
+
 # Driver Workday – Core Data Model (Workday)
 
 This document defines the **core data model of a driver's workday**

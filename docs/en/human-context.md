@@ -1,3 +1,9 @@
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Human and Local Context Principles
 
 ODWS is built on the understanding that work is performed by people,

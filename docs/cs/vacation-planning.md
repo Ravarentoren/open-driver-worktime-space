@@ -1,6 +1,12 @@
 > ⚠ This file is auto-generated from docs/en/vacation-planning.md.
 > Do not edit manually.
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Vacation Planning and Intent
 
 This document defines vacation planning
