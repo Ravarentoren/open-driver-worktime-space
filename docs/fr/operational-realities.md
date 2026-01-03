@@ -172,6 +172,7 @@ This document serves as a permanent reference for those principles.
 
 Shift duration is a safety control construct only.
 
+
 It exists solely for:
 - road safety regulation,
 - fatigue management,
@@ -184,3 +185,8 @@ Shift duration:
 
 Compensation is based on the performed work period
 as defined independently from shift duration limits.
+
+## 12. Waiting, standby, and other work
+
+Waiting is an operable reality, not an exception.
+For a detailed explanation of waiting, standby, and other work, see waiting-standby-and-other-work.md.

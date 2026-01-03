@@ -229,6 +229,9 @@ The model MAY be extended only by:
 - without changing the meaning of core data
 - without breaking deterministic computation
 
+For a detailed explanation of waiting, standby, and other work, see waiting-standby-and-other-work.md.
+
+
 The core model MUST remain stable
 even if interpretation, law,
 or economic conditions change.
