@@ -4,136 +4,136 @@
 
 # Open Driver Worktime Space (ODWS)
 
-> Deterministic, auditable computation of driver worktime  
-> grounded in reality, not assumptions.
+Deterministický, auditovatelný výpočet pracovní doby řidiče
+založené na realitě, ne na domněnkách.
 
-ODWS is an open specification and reference space  
-for recording, correcting, and computing professional driver worktime  
-across real-world conditions.
-
----
-
-## 🧭 What is ODWS
-
-Open Driver Worktime Space (ODWS) is a human-centered model  
-for describing and computing driver worktime as it actually happened.
-
-It separates:
-- **facts** from **interpretation**
-- **input** from **computation**
-- **reality** from **administrative decisions**
-
-ODWS does not judge.  
-ODWS records, computes, and explains.
+ODWS je otevřená specifikace a referenční prostor
+pro záznam, opravu a výpočet pracovní doby profesionálních řidičů
+v podmínkách reálného světa.
 
 ---
 
-## 🧠 Core Principles
+## 🧭 Co je ODWS
 
-- **Reality first**  
-  What happened is always recorded before asking whether it was allowed.
+Open Driver Worktime Space (ODWS) je model zaměřený na člověka
+pro popis a výpočet pracovní doby řidiče, jak se skutečně stala.
 
-- **Deterministic computation**  
-  Same inputs always produce the same results, with a full trace.
+Odděluje:
+- **fakta** z **výkladu**
+- **vstup** z **výpočtu**
+- **realita** z **administrativních rozhodnutí**
 
-- **Human-correctable inputs**  
-  Delayed recognition and correction are normal properties of reality.
-
-- **Separation of concerns**  
-  Facts, computation, legal meaning, and payroll decisions are distinct layers.
-
-- **Technology is not authority**  
-  Devices, spreadsheets, and systems are signals — not truth.
+ODWS nesoudí.
+ODWS zaznamenává, počítá a vysvětluje.
 
 ---
 
-## 👥 Who is this for
+## 🧠 Základní principy
 
-ODWS is designed for:
+-**Realita na prvním místě**
+Co se stalo, je vždy zaznamenáno před dotazem, zda to bylo povoleno.
 
-- **Professional drivers**  
-  who need transparent, explainable records of their work
+- **Deterministický výpočet**
+Stejné vstupy vždy produkují stejné výsledky s úplnou stopou.
 
-- **Employers**  
-  who need auditable and reproducible computations
+- **Vstupy opravitelné člověkem**
+Zpožděné rozpoznání a korekce jsou normální vlastnosti reality.
 
-- **Developers**  
-  who want a clear, deterministic model instead of spreadsheet chaos
+- **Oddělení starostí**
+Fakta, výpočty, právní význam a rozhodnutí o mzdách jsou odlišné vrstvy.
 
-- **Auditors and inspectors**  
-  who need to understand *how* a result was obtained
-
----
-
-## 📂 Documentation
-
-The normative specification lives in the `docs/` directory.
-
-Documentation is:
-- explicit
-- human-readable
-- machine-processable
-- available in multiple languages
-
-> If it is not written down, it does not exist.
+- **Technologie není autorita**
+Zařízení, tabulky a systémy jsou signály – nikoli pravda.
 
 ---
 
-## 🔗 Related Repositories
+## 👥 Pro koho to je
 
-This repository defines the **ODWS specification**.
+ODES je určen pro:
 
-A reference implementation and product-oriented repository
-is developed separately:
+- **Profesionální řidiči**
+kteří potřebují transparentní a srozumitelné záznamy o své práci
 
-➡️ https://github.com/Ravarentoren/odws-compensation-engine
+- **Zaměstnavatelé**
+kteří potřebují auditovatelné a reprodukovatelné výpočty
 
-The separation is intentional:
-- this repository focuses on concepts and rules
-- implementation repositories focus on concrete behavior and tooling
+- **Vývojáři**
+kteří chtějí jasný, deterministický model místo tabulkového chaosu
 
----
-
-## 💬 Discussion & Collaboration
-
-All discussion happens openly on GitHub.
-
-Use Discussions for:
-- questions
-- design feedback
-- real-world scenarios
-- disagreements and alternatives
-
-The goal is clarity, not consensus.
-
-➡️ **Go to Discussions:**  
-https://github.com/Ravarentoren/open-driver-worktime-space/discussions
+- **Auditoři a inspektoři**
+kteří potřebují pochopit *jak* bylo dosaženo výsledku
 
 ---
 
-## ⚠️ A note on understanding and limits
+## 📂 Dokumentace
 
-No individual, organization, or system  
-has a patent on reason, truth, or understanding.
+Normativní specifikace se nachází v adresáři `docs/`.
 
-What exists here is the result of:
-- long-term sharing of experience
-- learning technical constraints
-- observing social and operational reality
-- correcting mistakes over time
+Dokumentace je:
+- explicitní
+- čitelné pro člověka
+- strojově zpracovatelné
+- k dispozici ve více jazycích
 
-ODWS does not claim completeness or infallibility.  
-It exists to make assumptions visible  
-and reasoning inspectable.
+Pokud není zapsán, neexistuje.
 
 ---
 
-## ⚖️ License
+## 🔗 Související repozitáře
 
-This project is licensed under the **Apache License 2.0**.
+Toto úložiště definuje **specifikaci ODWS**.
 
-The license is chosen to:
-- allow free use and redistribution
-- enable modification and extension
-- avoid personal or institutional lock-in
-- support long-term transfer and stewardship
+Referenční implementace a produktově orientované úložiště
+je vyvíjen samostatně:
+
+➡️ @@ODWS_URL_0@@
+
+Rozdělení je záměrné:
+- toto úložiště se zaměřuje na koncepty a pravidla
+- implementační úložiště se zaměřují na konkrétní chování a nástroje
+
+---
+
+## 💬 Diskuze a spolupráce
+
+Veškerá diskuse probíhá otevřeně na GitHubu.
+
+Použijte diskuze pro:
+- otázky
+- zpětná vazba k designu
+- scénáře ze skutečného světa
+- neshody a alternativy
+
+Cílem je jasnost, nikoli konsenzus.
+
+➡️ **Přejít na Diskuze:**
+@@ENT_ENT_1@@
+
+---
+
+## ⚠️ Poznámka k porozumění a limitům
+
+Žádný jednotlivec, organizace nebo systém
+má patent na rozum, pravdu nebo porozumění.
+
+To, co zde existuje, je výsledkem:
+- dlouhodobé sdílení zkušeností
+- učení technickým omezením
+- pozorování sociální a provozní reality
+- oprava chyb v průběhu času
+
+ODWS si nenárokuje úplnost nebo neomylnost.
+Existuje proto, aby byly předpoklady viditelné
+a uvažování kontrolovatelné.
+
+---
+
+## ⚖️ Licence
+
+Tento projekt je licencován pod **Apache License 2.0**.
+
+Licence je vybrána pro:
+- umožnit bezplatné používání a redistribuci
+- povolit úpravy a rozšíření
+- vyhnout se osobnímu nebo institucionálnímu uzamčení
+- podporovat dlouhodobý přesun a správcovství

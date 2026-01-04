@@ -4,136 +4,136 @@
 
 # Open Driver Worktime Space (ODWS)
 
-> Deterministic, auditable computation of driver worktime  
-> grounded in reality, not assumptions.
+Deterministische, überprüfbare Berechnung der Fahrerarbeitszeit
+basieren auf der Realität, nicht auf Annahmen.
 
-ODWS is an open specification and reference space  
-for recording, correcting, and computing professional driver worktime  
-across real-world conditions.
-
----
-
-## 🧭 What is ODWS
-
-Open Driver Worktime Space (ODWS) is a human-centered model  
-for describing and computing driver worktime as it actually happened.
-
-It separates:
-- **facts** from **interpretation**
-- **input** from **computation**
-- **reality** from **administrative decisions**
-
-ODWS does not judge.  
-ODWS records, computes, and explains.
+ODWS ist ein offener Spezifikations- und Referenzraum
+zur Erfassung, Korrektur und Berechnung der Arbeitszeit von Berufskraftfahrern
+unter realen Bedingungen.
 
 ---
 
-## 🧠 Core Principles
+## 🧭 Was ist ODWS
 
-- **Reality first**  
-  What happened is always recorded before asking whether it was allowed.
+Open Driver Worktime Space (ODWS) ist ein menschenzentriertes Modell
+zur Beschreibung und Berechnung der Fahrerarbeitszeit, wie sie tatsächlich angefallen ist.
 
-- **Deterministic computation**  
-  Same inputs always produce the same results, with a full trace.
+Es trennt:
+- **Fakten** aus **Interpretation**
+- **Eingabe** aus **Berechnung**
+- **Realität** aus **Verwaltungsentscheidungen**
 
-- **Human-correctable inputs**  
-  Delayed recognition and correction are normal properties of reality.
-
-- **Separation of concerns**  
-  Facts, computation, legal meaning, and payroll decisions are distinct layers.
-
-- **Technology is not authority**  
-  Devices, spreadsheets, and systems are signals — not truth.
+ODWS urteilt nicht.
+ODWS erfasst, berechnet und erklärt.
 
 ---
 
-## 👥 Who is this for
+## 🧠 Grundprinzipien
 
-ODWS is designed for:
+- **Realität zuerst**
+Es wird immer protokolliert, was passiert ist, bevor gefragt wird, ob es erlaubt war.
 
-- **Professional drivers**  
-  who need transparent, explainable records of their work
+- **Deterministische Berechnung**
+Gleiche Eingaben führen immer zu denselben Ergebnissen, mit einem vollständigen Trace.
 
-- **Employers**  
-  who need auditable and reproducible computations
+- **Vom Menschen korrigierbare Eingaben**
+Verspätetes Erkennen und Korrigieren sind normale Eigenschaften der Realität.
 
-- **Developers**  
-  who want a clear, deterministic model instead of spreadsheet chaos
+- **Trennung der Belange**
+Fakten, Berechnungen, rechtliche Bedeutung und Entscheidungen zur Gehaltsabrechnung sind unterschiedliche Ebenen.
 
-- **Auditors and inspectors**  
-  who need to understand *how* a result was obtained
-
----
-
-## 📂 Documentation
-
-The normative specification lives in the `docs/` directory.
-
-Documentation is:
-- explicit
-- human-readable
-- machine-processable
-- available in multiple languages
-
-> If it is not written down, it does not exist.
+- **Technologie ist keine Autorität**
+Geräte, Tabellenkalkulationen und Systeme sind Signale – keine Wahrheit.
 
 ---
 
-## 🔗 Related Repositories
+## 👥 Für wen ist das?
 
-This repository defines the **ODWS specification**.
+ODES ist konzipiert für:
 
-A reference implementation and product-oriented repository
-is developed separately:
+- **Berufskraftfahrer**
+die eine transparente und nachvollziehbare Dokumentation ihrer Arbeit benötigen
 
-➡️ https://github.com/Ravarentoren/odws-compensation-engine
+- **Arbeitgeber**
+die überprüfbare und reproduzierbare Berechnungen benötigen
 
-The separation is intentional:
-- this repository focuses on concepts and rules
-- implementation repositories focus on concrete behavior and tooling
+- **Entwickler**
+die ein klares, deterministisches Modell statt Tabellenchaos wollen
 
----
-
-## 💬 Discussion & Collaboration
-
-All discussion happens openly on GitHub.
-
-Use Discussions for:
-- questions
-- design feedback
-- real-world scenarios
-- disagreements and alternatives
-
-The goal is clarity, not consensus.
-
-➡️ **Go to Discussions:**  
-https://github.com/Ravarentoren/open-driver-worktime-space/discussions
+- **Auditoren und Inspektoren**
+die verstehen müssen, *wie* ein Ergebnis erzielt wurde
 
 ---
 
-## ⚠️ A note on understanding and limits
+## 📂 Dokumentation
 
-No individual, organization, or system  
-has a patent on reason, truth, or understanding.
+Die normative Spezifikation befindet sich im Verzeichnis „docs/“.
 
-What exists here is the result of:
-- long-term sharing of experience
-- learning technical constraints
-- observing social and operational reality
-- correcting mistakes over time
+Dokumentation ist:
+- explizit
+- für Menschen lesbar
+- maschinell verarbeitbar
+- in mehreren Sprachen verfügbar
 
-ODWS does not claim completeness or infallibility.  
-It exists to make assumptions visible  
-and reasoning inspectable.
+Wenn es nicht niedergeschrieben ist, existiert es nicht.
 
 ---
 
-## ⚖️ License
+## 🔗 Verwandte Repositories
 
-This project is licensed under the **Apache License 2.0**.
+Dieses Repository definiert die **ODWS-Spezifikation**.
 
-The license is chosen to:
-- allow free use and redistribution
-- enable modification and extension
-- avoid personal or institutional lock-in
-- support long-term transfer and stewardship
+Eine Referenzimplementierung und ein produktorientiertes Repository
+wird separat entwickelt:
+
+➡️ @@ODWS_URL_0@@
+
+Die Trennung ist beabsichtigt:
+- Dieses Repository konzentriert sich auf Konzepte und Regeln
+- Implementierungsrepositorys konzentrieren sich auf konkretes Verhalten und Tools
+
+---
+
+## 💬 Diskussion und Zusammenarbeit
+
+Alle Diskussionen finden offen auf GitHub statt.
+
+Verwenden Sie Diskussionen für:
+- Fragen
+- Design-Feedback
+- reale Szenarien
+- Meinungsverschiedenheiten und Alternativen
+
+Das Ziel ist Klarheit, nicht Konsens.
+
+➡️ **Gehe zu Diskussionen:**
+@@ENT_ENT_1@@
+
+---
+
+## ⚠️ Ein Hinweis zum Verständnis und zu den Grenzen
+
+Kein Individuum, keine Organisation oder kein System
+hat ein Patent auf Vernunft, Wahrheit oder Verständnis.
+
+Was hier existiert, ist das Ergebnis von:
+- Langfristiger Erfahrungsaustausch
+- Erlernen technischer Einschränkungen
+- Beobachtung der gesellschaftlichen und betrieblichen Realität
+- Fehler im Laufe der Zeit korrigieren
+
+ODWS erhebt keinen Anspruch auf Vollständigkeit oder Unfehlbarkeit.
+Es existiert, um Annahmen sichtbar zu machen
+und Argumentation einsehbar.
+
+---
+
+## ⚖️ Lizenz
+
+Dieses Projekt ist unter der **Apache-Lizenz 2.0** lizenziert.
+
+Die Lizenz wird gewählt, um:
+- freie Nutzung und Weiterverbreitung ermöglichen
+- Modifikation und Erweiterung ermöglichen
+- Vermeiden Sie eine persönliche oder institutionelle Bindung
+- den langfristigen Transfer und die Verwaltung unterstützen
