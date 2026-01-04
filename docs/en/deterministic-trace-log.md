@@ -4,6 +4,12 @@ odws:
 -->
 
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Deterministic Trace Log (DTL)
 
 The Deterministic Trace Log (DTL) is a mandatory, normative component

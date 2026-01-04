@@ -4,6 +4,12 @@ odws:
 -->
 
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Employment Termination – Input Facts
 
 This document defines the **input facts** related to the termination

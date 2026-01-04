@@ -4,6 +4,12 @@ odws:
 -->
 
 
+<!--
+odws:
+  layer: descriptive
+-->
+
+
 # Regulatory Regimes and Applicability Context
 
 This document defines how regulatory regimes relate to the
