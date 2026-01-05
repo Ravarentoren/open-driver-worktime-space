@@ -133,3 +133,42 @@ The license is chosen to:
 - enable modification and extension
 - avoid personal or institutional lock-in
 - support long-term transfer and stewardship
+
+---
+
+## 🗣️ Documentation translations
+
+This repository includes a **local-only documentation translation helper** intended for a **single responsible maintainer**.
+
+➡️ Translation script:  
+https://github.com/Ravarentoren/open-driver-worktime-space/blob/main/scripts/translate_docs.sh
+
+The script:
+- translates documentation from `docs/en/` into selected languages
+- preserves the original English documents as authoritative
+- keeps exactly one metadata block per document
+- is designed to run **locally** (e.g. Termux, Linux, macOS)
+- does **not** enforce CI, checks, or automatic overwrites
+
+### ⚒️ Usage
+
+bash:
+
+Offline test (no network, no translation)
+
+OFFLINE=true ./scripts/translate_docs.sh
+
+Real translation (requires translate-shell / trans)
+
+./scripts/translate_docs.sh
+
+### 🎓 Philosophy
+
+Translations are provided as a communication aid, not as a legal or normative source.
+- Human-reviewed edits are allowed and expected.
+
+- No automatic checks enforce equality with machine translations.
+
+- Responsibility remains with the maintainer of the translation.
+
+The English documentation remains the authoritative source.
