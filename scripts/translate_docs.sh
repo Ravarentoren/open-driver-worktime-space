@@ -1,16 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# ============================
+# CONFIG
+# ============================
+
 SOURCE_LANG="en"
 TARGET_LANGS=("cs" "de" "fr" "ru")
 DOCS_DIR="docs"
 
 DEBUG="${DEBUG:-false}"
 OFFLINE="${OFFLINE:-false}"
+FORCE="${FORCE:-false}"
+
+# ============================
+# LOGGING
+# ============================
 
 log() {
   [[ "$DEBUG" == "true" ]] && echo "[DEBUG] $*"
 }
+
+# ============================
+# TRANSLATION BACKEND
+# ============================
 
 translate() {
   local lang="$1"
@@ -21,17 +34,27 @@ translate() {
   fi
 }
 
+# ============================
+# TRANSLATE SINGLE FILE
+# ============================
+
 translate_file() {
   local src="$1"
   local lang="$2"
   local dst="$3"
 
-  log "→ $src → $dst"
+  # pokud cílový soubor existuje a není FORCE, přeskoč
+  if [[ -f "$dst" && "$FORCE" != "true" ]]; then
+    log "↷ Skipping existing: $dst"
+    return
+  fi
 
-  # 1️⃣ metadata = první HTML komentář (pokud existuje)
+  log "→ Translating: $src → $dst"
+
+  # metadata = první HTML komentář
   metadata="$(sed -n '1,/-->/p' "$src")"
 
-  # 2️⃣ tělo = vše ZA prvním HTML komentářem
+  # body = vše za metadata
   body="$(sed '1,/-->/d' "$src")"
 
   {
@@ -45,14 +68,22 @@ translate_file() {
   } > "$dst"
 }
 
-log "Starting translation"
+# ============================
+# MAIN
+# ============================
+
+log "Starting documentation translation"
 
 for lang in "${TARGET_LANGS[@]}"; do
-  mkdir -p "$DOCS_DIR/$lang"
+  target_dir="$DOCS_DIR/$lang"
+  mkdir -p "$target_dir"
 
-  for file in "$DOCS_DIR/$SOURCE_LANG"/*.md; do
-    translate_file "$file" "$lang" "$DOCS_DIR/$lang/$(basename "$file")"
+  for src in "$DOCS_DIR/$SOURCE_LANG"/*.md; do
+    filename="$(basename "$src")"
+    dst="$target_dir/$filename"
+
+    translate_file "$src" "$lang" "$dst"
   done
 done
 
-log "Done"
+log "Translation finished"

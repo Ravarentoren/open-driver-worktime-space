@@ -1,0 +1,233 @@
+<!--
+odws:
+  layer: normative
+  scope: odws-ce-core
+-->
+
+# ODWS-CE Core – Time and Inputs Foundations
+
+This document normatively defines the **core foundations** of the
+**Open Driver Worktime Space – Compensation Engine (ODWS-CE)**.
+
+It describes **what the computation core is built upon**,
+not how it is implemented, optimized, or presented to users.
+
+The purpose of this document is to establish a **stable, non-negotiable base**
+for all ODWS-CE implementations.
+
+---
+
+## Scope
+
+This document normatively defines:
+
+1. Time primitives used by ODWS-CE
+2. The nature of inputs as representations of reality
+3. The relationship between inputs, time, and conflicts
+
+It explicitly does **not** define:
+
+* wages or compensation rules
+* legal compliance logic
+* UI or UX behavior
+* storage, synchronization, or networking
+
+---
+
+## 1. Time primitives
+
+### 1.1 Time as a continuous axis
+
+ODWS-CE operates on a **continuous time axis**.
+
+Time is treated as:
+
+* continuous
+* linear
+* monotonic
+
+ODWS-CE does **not** operate on:
+
+* calendar days
+* workdays
+* shifts
+* scheduled blocks
+
+Such concepts may exist only in **interpretation layers**, never in the core.
+
+---
+
+### 1.2 TimePoint
+
+A **TimePoint** represents a single position on the time axis.
+
+A TimePoint:
+
+* has a precise timestamp
+* is immutable once created
+* is always associated with a source reference
+
+TimePoints:
+
+* do not imply meaning
+* do not imply work
+* do not imply responsibility
+
+They only locate events in time.
+
+---
+
+### 1.3 TimeInterval
+
+A **TimeInterval** represents a span between two TimePoints.
+
+A TimeInterval:
+
+* has a start TimePoint
+* has an end TimePoint
+* may include uncertainty or confidence metadata
+
+TimeIntervals:
+
+* may overlap
+* may be fragmented
+* may be incomplete
+
+There is no requirement that intervals:
+
+* align to days
+* align to shifts
+* align to contractual expectations
+
+Reality takes precedence over structure.
+
+---
+
+## 2. Inputs as representations of reality
+
+### 2.1 Nature of inputs
+
+All inputs in ODWS-CE represent **claims about reality**.
+
+An input:
+
+* describes what allegedly happened
+* does not assert correctness
+* does not override other inputs
+
+Inputs are **observations**, not truth.
+
+---
+
+### 2.2 Input records
+
+Each input is represented as an **InputRecord**.
+
+An InputRecord:
+
+* references one or more TimeIntervals
+* identifies its source
+* records authorship and creation time
+
+InputRecords are:
+
+* immutable
+* append-only
+
+Once created, an input record:
+
+* is never modified
+* is never deleted
+* may only be superseded by additional inputs
+
+---
+
+### 2.3 Types of input sources
+
+ODWS-CE recognizes multiple classes of input sources, including but not limited to:
+
+* automated devices (e.g. tachographs)
+* human declarations
+* derived records (e.g. spreadsheets, scans)
+* corrective or explanatory inputs
+
+No input source is inherently authoritative.
+
+Authority is **never** implied by technology, position, or role.
+
+---
+
+## 3. Conflicts and coexistence of inputs
+
+### 3.1 Conflicts are expected
+
+Conflicts between inputs are a **normal property of reality**.
+
+Conflicts may arise between:
+
+* device and human input
+* human and human input
+* document and document
+
+The presence of conflict:
+
+* is not an error
+* is not a failure
+* does not invalidate the system
+
+A conflict is **information**.
+
+---
+
+### 3.2 Conflict representation
+
+Conflicts are explicitly represented within ODWS-CE.
+
+A conflict:
+
+* references the involved inputs
+* identifies the overlapping or inconsistent intervals
+* is traceable and inspectable
+
+Conflicts are preserved throughout computation.
+
+They are never silently resolved or discarded.
+
+---
+
+### 3.3 Protection against overwriting reality
+
+ODWS-CE is designed to prevent replacement of reality by authority.
+
+Therefore:
+
+* no input can overwrite another input
+* no role can erase previous records
+* no computation step can hide conflicts
+
+Any attempt to reinterpret reality:
+
+* results in new inputs
+* leaves the original records intact
+
+This guarantees that:
+
+* employee inputs remain visible
+* historical reality remains reconstructible
+* power asymmetry cannot silently rewrite time
+
+---
+
+## Normative summary
+
+In ODWS-CE:
+
+* time is continuous, not scheduled
+* inputs describe reality, not authority
+* conflicts are data, not defects
+* overwriting reality is structurally impossible
+
+All higher-level concepts
+(wages, legality, compliance, reporting)
+are built **on top of this foundation**,
+never inside it.

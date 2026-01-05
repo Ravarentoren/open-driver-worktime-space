@@ -154,14 +154,21 @@ The script:
 
 bash:
 
-Offline test (no network, no translation)
+- Normal safe run
+
+./scripts/translate_docs.sh             
+
+- Show actions
+
+DEBUG=true ./scripts/translate_docs.sh  
+
+- Overwrite all
+
+FORCE=true ./scripts/translate_docs.sh  
+
+- No network
 
 OFFLINE=true ./scripts/translate_docs.sh
-
-Real translation (requires translate-shell / trans)
-
-./scripts/translate_docs.sh
-
 ### 🎓 Philosophy
 
 Translations are provided as a communication aid, not as a legal or normative source.
