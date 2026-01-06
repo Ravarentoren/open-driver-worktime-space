@@ -9,230 +9,210 @@ odws:
 -->
 
 
-# ODWS-CE Core – Fondements du temps et des entrées
+# ODWS-CE Core – Définition normative du noyau technique
 
-Ce document définit normativement les **fondements fondamentaux** du
-**Espace de travail du conducteur ouvert – Moteur de rémunération (ODWS-CE)**.
+Ce document **définit normativement le noyau technique (noyau) du système ODWS-CE**
+(Ouvrir Espace de travail du conducteur – Moteur de rémunération).
 
-Il décrit **sur quoi repose le cœur de calcul**,
-pas la façon dont il est implémenté, optimisé ou présenté aux utilisateurs.
+Le document :
+- définit **ce que le noyau fait et ne fait pas**
+- établit des **limites claires de responsabilité**
+- décrit **la transformation de la réalité en une structure déterministe**
 
-Le but de ce document est d'établir une **base stable et non négociable**
-pour toutes les implémentations ODWS-CE.
+Il ne traite **pas** :
+- interprétation juridique
+- les salaires ou la masse salariale
+- sanctions
+- évaluation du comportement humain
 
----
-
-## Portée
-
-Ce document définit normativement :
-
-1. Primitives temporelles utilisées par ODWS-CE
-2. La nature des intrants en tant que représentations de la réalité
-3. La relation entre les apports, le temps et les conflits
-
-Il ne définit explicitement **pas** :
-
-* règles de salaires ou de compensation
-* logique de conformité légale
-* Comportement UI ou UX
-* stockage, synchronisation ou mise en réseau
+Ces domaines sont couverts par **d'autres couches de documentation**.
 
 ---
 
-## 1. Primitives temporelles
+## 1. Objectif du noyau
 
-### 1.1 Le temps comme axe continu
+Le noyau ODWS-CE existe pour :
 
-ODWS-CE fonctionne sur un **axe temporel continu**.
+- transformez les **enregistrements de la réalité** en une chronologie unifiée et cohérente
+- préserver une **structure de données déterministe et auditable**
+- fournir une **base stable pour les calculs ultérieurs**
 
-Le temps est traité comme :
+Le noyau :
+- **n'interprète pas**
+- **n'évalue pas**
+- **ne juge pas**
 
-* continu
-* linéaire
-* monotone
-
-ODWS-CE ne fonctionne **pas** sur :
-
-* jours calendaires
-* jours ouvrables
-* changements
-* blocs programmés
-
-De tels concepts ne peuvent exister que dans des **couches d'interprétation**, jamais dans le noyau.
+Le noyau **transforme fidèlement la réalité en une forme utilisable par ordinateur**.
 
 ---
 
-### 1.2 Point temporel
+## 2. Principes fondamentaux
 
-Un **TimePoint** représente une position unique sur l'axe du temps.
+Normativement, ce qui suit s'applique :
 
-Un point temporel :
-
-* a un horodatage précis
-* est immuable une fois créé
-* est toujours associé à une référence source
-
-Points horaires :
-
-* n'implique aucune signification
-* n'implique pas de travail
-* n'implique pas de responsabilité
-
-Ils situent uniquement les événements dans le temps.
+- à tout moment réel, **il existe exactement un seul état réel**
+- la chronologie est **continue et ininterrompue**
+- l'agrégation d'états est le résultat d'une **interprétation**, pas de la réalité
+- les appareils techniques (par exemple les tachygraphes) sont des **sources de signaux**, pas les autorités
 
 ---
 
-### 1.3 Timmentwal
+## 3. Étape A – Acquisition de la réalité brute
 
-Un **TimeInterval** représente un intervalle entre deux TimePoints.
+### A.1 Sources de réalité
 
-Un Timmentwal :
+L’entrée principale est constituée d’**enregistrements de la réalité du conducteur**, notamment :
 
-* a un TimePoint de départ
-* a un TimePoint de fin
-* peut inclure des métadonnées d'incertitude ou de confiance
+- les données de la carte de conducteur dans un tachygraphe (par exemple au format `.ddd`)
+- autres dossiers techniques
+- entrées manuelles de réalité fournies par un humain
 
-Intervalles de temps :
+Le noyau **accepte normativement** que :
 
-* peut se chevaucher
-* peut être fragmenté
-*peut être incomplet
+- aucun appareil ne capture complètement la réalité
+- la saisie manuelle est une **partie légitime de la réalité**
+- la réalité peut être enregistrée **avec retard**
 
-Il n’est pas obligatoire que les intervalles :
+### A.2 Position sur la véracité des entrées
 
-* aligner sur les jours
-* s'aligner sur les changements
-* s'aligner sur les attentes contractuelles
+Le noyau :
+- **ne présume pas le mensonge**
+- **ne rejette pas les corrections**
+- **n'évalue pas l'intention**
 
-La réalité prime sur la structure.
-
----
-
-## 2. Les entrées comme représentations de la réalité
-
-### 2.1 Nature des intrants
-
-Toutes les entrées dans ODWS-CE représentent des **affirmations sur la réalité**.
-
-Une entrée :
-
-* décrit ce qui se serait passé
-* n'affirme pas l'exactitude
-* ne remplace pas les autres entrées
-
-Les entrées sont des **observations**, pas la vérité.
+Chaque enregistrement est traité comme une **déclaration de réalité** jusqu'à ce qu'il soit remplacé par une correction.
 
 ---
 
-### 2.2 Enregistrements d'entrée
+## 4. Étape B – Normalisation des événements
 
-Chaque entrée est représentée par un **InputRecord**.
+Les entrées brutes sont transformées en **événements** unifiés.
 
-Un InputRecord :
+Chaque événement contient au minimum :
+- un horodatage
+- un type d'événement
+- un identifiant source
 
-* fait référence à un ou plusieurs TimeIntervals
-* identifie sa source
-* enregistre la paternité et le temps de création
+Les changements de mode typiques incluent :
+- conduire
+- travail
+- autre activité
+- repos
 
-Les enregistrements d'entrée sont :
-
-* immuable
-* ajout uniquement
-
-Une fois créé, un enregistrement d'entrée :
-
-* n'est jamais modifié
-* n'est jamais supprimé
-* ne peut être remplacé que par des entrées supplémentaires
+Le noyau :
+- **ne modifie pas la signification des modes**
+- seulement **les normalise dans une représentation commune**
 
 ---
 
-### 2.3 Types de sources d'entrée
+## 5. Étape C – Construction de la chronologie de la réalité
 
-ODWS-CE reconnaît plusieurs classes de sources d'entrée, y compris, mais sans s'y limiter :
+À partir d’événements normalisés, le noyau construit :
 
-* appareils automatisés (par exemple tachygraphes)
-* déclarations humaines
-* enregistrements dérivés (par exemple, feuilles de calcul, analyses)
-* entrées correctives ou explicatives
+- **une seule chronologie continue**
+- sans lacunes
+- sans chevauchements
 
-Aucune source d’entrée ne fait intrinsèquement autorité.
+Normativement :
+- tous les intervalles marqués comme repos font partie de la chronologie
+- aucun intervalle de réalité n'est exclu ou supprimé
+- les pauses sont des **états de réalité**, pas des exceptions
 
-L'autorité n'est **jamais** implicite par la technologie, le poste ou le rôle.
-
----
-
-## 3. Conflits et coexistence des intrants
-
-### 3.1 Des conflits sont attendus
-
-Les conflits entre les entrées sont une **propriété normale de la réalité**.
-
-Des conflits peuvent survenir entre :
-
-* appareil et contribution humaine
-*apport humain et humain
-* document et document
-
-La présence d'un conflit :
-
-* n'est pas une erreur
-*n'est pas un échec
-* n'invalide pas le système
-
-Un conflit est une **information**.
+Le noyau :
+- **ne supprime pas les pauses**
+- **n'interrompt pas la réalité**
 
 ---
 
-### 3.2 Représentation des conflits
+## 6. Étape D – Commande déterministe
 
-Les conflits sont explicitement représentés dans ODWS-CE.
+La chronologie est la suivante :
+- commandé de manière unique
+- déterministe
+- reproductible
 
-Un conflit :
-
-* fait référence aux entrées impliquées
-* identifie les intervalles qui se chevauchent ou qui sont incohérents
-* est traçable et inspectable
-
-Les conflits sont préservés tout au long du calcul.
-
-Ils ne sont jamais résolus ou rejetés en silence.
+Pour une saisie identique :
+- le noyau doit toujours produire des **structures de sortie identiques**
 
 ---
 
-### 3.3 Protection contre l'écrasement de la réalité
+## 7. Étape E – Préservation du contexte spatial
 
-ODWS-CE est conçu pour empêcher le remplacement de la réalité par l’autorité.
+Le noyau accepte :
+- les coordonnées
+- pays
+- emplacements saisis via tachygraphe ou d'autres sources
 
-Donc:
-
-* aucune entrée ne peut écraser une autre entrée
-* aucun rôle ne peut effacer les enregistrements précédents
-* aucune étape de calcul ne peut masquer les conflits
-
-Toute tentative de réinterprétation de la réalité :
-
-* entraîne de nouvelles entrées
-* laisse les enregistrements originaux intacts
-
-Cela garantit que :
-
-* les contributions des employés restent visibles
-* la réalité historique reste reconstructible
-* L'asymétrie de pouvoir ne peut pas réécrire le temps en silence
+Normativement :
+- les données spatiales ne sont pas contestées au moment de la saisie
+- les corrections sont enregistrées comme des faits nouveaux
+- les informations spatiales font **partie de la réalité**
 
 ---
 
-## Résumé normatif
+## 8. Étape F – Préparation pour les calculs futurs
 
-Dans ODWS-CE :
+Bien que le noyau **ne calcule pas les salaires**, il exige normativement que :
 
-* le temps est continu, non programmé
-* les entrées décrivent la réalité, pas l'autorité
-* les conflits sont des données, pas des défauts
-* l'écrasement de la réalité est structurellement impossible
+Le noyau doit conserver suffisamment d’informations pour :
+- calcul du temps de travail
+- calcul de l'indemnité de subsistance
+- évaluation des droits
+- évaluation du remboursement des coûts (par exemple, utilisation d'un véhicule privé)
+- auditabilité des calculs
 
-Tous les concepts de niveau supérieur
-(salaires, légalité, conformité, reporting)
-sont construits **sur cette fondation**,
-jamais à l'intérieur.
+Cela comprend :
+- heure précise
+- commande exacte des événements
+- continuité spatiale
+
+---
+
+## 9. Étape G – Entrée et sortie de base
+
+### Saisir:
+- enregistrements de la réalité (techniques et manuels)
+- sans évaluation légale
+
+### Sortir:
+- une chronologie structurée et déterministe de la réalité
+- adapté à d'autres couches de calcul et d'interprétation
+
+Le noyau :
+- **ne se termine pas par des jugements juridiques**
+- **ouvre l'espace pour les couches suivantes**
+
+---
+
+## 10. Relation avec d'autres documents
+
+Ce document est **normatif**.
+
+Documents descriptifs :
+- décrire des situations du monde réel
+- expliquer pourquoi le modèle est nécessaire
+- documenter les conflits entre la réalité et les attentes
+
+Documents interprétatifs :
+- aborder les interprétations juridiques
+- spécificités nationales
+- des régimes réglementaires différents
+
+Documents informatiques :
+- définir des algorithmes de calcul spécifiques
+
+---
+
+## 11. Résumé normatif
+
+Le noyau ODWS-CE :
+- transforme la réalité, pas l'interprétation
+- préserve le temps, l'espace et l'ordre
+- est déterministe et auditable
+- protège la réalité de l'autorité et des suppositions
+
+Si quelque chose n'est pas enregistré,
+le noyau **ne l'invente pas**.
+
+Si quelque chose est enregistré,
+le noyau **ne le remet pas en question**.

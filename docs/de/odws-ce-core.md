@@ -9,230 +9,210 @@ odws:
 -->
 
 
-# ODWS-CE Core – Zeit- und Input-Grundlagen
+# ODWS-CE Core – Normative Definition des technischen Kerns
 
-Dieses Dokument definiert normativ die **Kerngrundlagen** der
-**Open Driver Worktime Space – Compensation Engine (ODWS-CE)**.
+Dieses Dokument **definiert normativ den technischen Kern (Kern) des ODWS-CE-Systems**
+(Open Driver Worktime Space – Compensation Engine).
 
-Es beschreibt **worauf der Rechenkern aufbaut**,
-nicht, wie es implementiert, optimiert oder den Benutzern präsentiert wird.
+Das Dokument:
+- definiert **was der Kern tut und was nicht**
+- legt **klare Verantwortungsgrenzen** fest
+- beschreibt **die Transformation der Realität in eine deterministische Struktur**
 
-Der Zweck dieses Dokuments besteht darin, eine **stabile, nicht verhandelbare Basis** zu schaffen.
-für alle ODWS-CE-Implementierungen.
+Folgendes wird **nicht** angesprochen:
+- Rechtsauslegung
+- Löhne oder Gehaltsabrechnung
+- Sanktionen
+- Bewertung menschlichen Verhaltens
 
----
-
-## Umfang
-
-Dieses Dokument definiert normativ:
-
-1. Von ODWS-CE verwendete Zeitprimitive
-2. Die Natur von Eingaben als Darstellungen der Realität
-3. Die Beziehung zwischen Eingaben, Zeit und Konflikten
-
-Es definiert explizit **nicht** Folgendes:
-
-* Lohn- oder Vergütungsregeln
-* Logik zur Einhaltung gesetzlicher Vorschriften
-* UI- oder UX-Verhalten
-* Speicherung, Synchronisierung oder Vernetzung
+Diese Bereiche werden durch **andere Dokumentationsebenen** abgedeckt.
 
 ---
 
-## 1. Zeitprimitive
+## 1. Zweck des Kerns
 
-### 1.1 Zeit als kontinuierliche Achse
+Der ODWS-CE-Kern besteht aus folgenden Zwecken:
 
-ODWS-CE arbeitet auf einer **kontinuierlichen Zeitachse**.
+- **Aufzeichnungen der Realität** in eine einheitliche, konsistente Zeitleiste umwandeln
+- Bewahren Sie eine **deterministische und überprüfbare Datenstruktur**
+- Bereitstellung einer **stabilen Grundlage für nachfolgende Berechnungen**
 
-Zeit wird behandelt als:
+Der Kern:
+- **interpretiert nicht**
+- **bewertet nicht**
+- **urteilt nicht**
 
-* kontinuierlich
-* linear
-* monoton
-
-ODWS-CE funktioniert **nicht** auf:
-
-* Kalendertage
-* Werktags
-* Verschiebungen
-* geplante Blöcke
-
-Solche Konzepte existieren möglicherweise nur in **Interpretationsebenen**, niemals im Kern.
+Der Kern wandelt lediglich die Realität originalgetreu in eine rechnerisch nutzbare Form um.
 
 ---
 
-### 1.2 Zeitpunkt
+## 2. Grundprinzipien
 
-Ein **TimePoint** repräsentiert eine einzelne Position auf der Zeitachse.
+Normativ gilt:
 
-Ein Zeitpunkt:
-
-* hat einen genauen Zeitstempel
-* ist nach der Erstellung unveränderlich
-* ist immer mit einer Quellenangabe verbunden
-
-Zeitpunkte:
-
-* bedeuten keine Bedeutung
-* bedeuten keine Arbeit
-* bedeuten keine Verantwortung
-
-Sie lokalisieren Ereignisse nur zeitlich.
+- Zu jedem realen Zeitpunkt existiert **genau ein realer Zustand**
+- Die Zeitleiste ist **kontinuierlich und ununterbrochen**
+- Die Aggregation von Zuständen ist ein Ergebnis der **Interpretation**, nicht der Realität
+- Technische Geräte (z. B. Fahrtenschreiber) sind **Signalquellen**, keine Behörden
 
 ---
 
-### 1.3 Timetwal
+## 3. Schritt A – Erfassung der rohen Realität
 
-Ein **TimeInterval** stellt eine Zeitspanne zwischen zwei Zeitpunkten dar.
+### A.1 Quellen der Realität
 
-Ein Timetwal:
+Der primäre Input besteht aus **Aufzeichnungen der Realität des Fahrers**, insbesondere:
 
-* hat einen Startzeitpunkt
-* hat einen Endzeitpunkt
-* kann Unsicherheits- oder Konfidenzmetadaten enthalten
+- Daten von der Fahrerkarte in einem Fahrtenschreiber (z. B. „.ddd“-Format)
+- andere technische Aufzeichnungen
+- manuelle Realitätseingaben durch einen Menschen
 
-Zeitintervalle:
+Der Kern akzeptiert **normativ** Folgendes:
 
-* kann sich überschneiden
-* kann fragmentiert sein
-* ist möglicherweise unvollständig
+- Kein Gerät erfasst die Realität vollständig
+- Manuelle Eingabe ist ein **legitimer Teil der Realität**
+- Die Realität kann **mit Verzögerung** erfasst werden
 
-Es gibt keine Anforderung, dass die Intervalle:
+### A.2 Position zur Wahrhaftigkeit von Eingaben
 
-* An Tagen ausrichten
-* An Verschiebungen anpassen
-* sich an den vertraglichen Erwartungen orientieren
+Der Kern:
+- **setzt keine Unwahrheit voraus**
+- **lehnt Korrekturen nicht ab**
+- **bewertet nicht die Absicht**
 
-Die Realität hat Vorrang vor der Struktur.
-
----
-
-## 2. Eingaben als Darstellungen der Realität
-
-### 2.1 Art der Eingaben
-
-Alle Eingaben in ODWS-CE stellen **Behauptungen über die Realität** dar.
-
-Eine Eingabe:
-
-* beschreibt, was angeblich passiert ist
-* erhebt keinen Anspruch auf Richtigkeit
-* überschreibt keine anderen Eingaben
-
-Eingaben sind **Beobachtungen**, keine Wahrheit.
+Jeder Datensatz wird als **Darstellung der Realität** behandelt, bis er durch eine Korrektur ersetzt wird.
 
 ---
 
-### 2.2 Eingabedatensätze
+## 4. Schritt B – Ereignisnormalisierung
 
-Jede Eingabe wird als **InputRecord** dargestellt.
+Roheingaben werden in einheitliche **Ereignisse** umgewandelt.
 
-Ein InputRecord:
+Jede Veranstaltung enthält mindestens:
+- ein Zeitstempel
+- ein Ereignistyp
+– eine Quellenkennung
 
-* verweist auf ein oder mehrere Zeitintervalle
-* gibt seine Quelle an
-* zeichnet Urheberschaft und Erstellungszeit auf
+Zu den typischen Modusänderungen gehören:
+- Fahren
+- arbeiten
+- andere Aktivität
+- ausruhen
 
-Eingabedatensätze sind:
-
-* unveränderlich
-* Nur anhängen
-
-Nach der Erstellung eines Eingabedatensatzes:
-
-* wird nie geändert
-* wird niemals gelöscht
-* darf nur durch zusätzliche Eingaben ersetzt werden
+Der Kern:
+- **Ändert die Bedeutung der Modi nicht**
+- **normalisiert sie nur in eine gemeinsame Darstellung**
 
 ---
 
-### 2.3 Arten von Eingabequellen
+## 5. Schritt C – Konstruktion der Realitätszeitleiste
 
-ODWS-CE erkennt mehrere Klassen von Eingabequellen, einschließlich, aber nicht beschränkt auf:
+Aus normalisierten Ereignissen konstruiert der Kern:
 
-* Automatisierte Geräte (z. B. Fahrtenschreiber)
-* menschliche Erklärungen
-* abgeleitete Datensätze (z. B. Tabellenkalkulationen, Scans)
-* korrigierende oder erklärende Eingaben
+- **eine einzelne kontinuierliche Zeitleiste**
+- ohne Lücken
+- ohne Überschneidungen
 
-Keine Eingabequelle ist von Natur aus maßgeblich.
+Normativ:
+- Alle als Pause markierten Intervalle sind Teil der Zeitleiste
+- Kein Realitätsbereich wird ausgeschlossen oder unterdrückt
+- Pausen sind **Zustände der Realität**, keine Ausnahmen
 
-Autorität wird **niemals** durch Technologie, Position oder Rolle impliziert.
-
----
-
-## 3. Konflikte und Koexistenz von Eingaben
-
-### 3.1 Konflikte sind zu erwarten
-
-Konflikte zwischen Eingaben sind eine **normale Eigenschaft der Realität**.
-
-Es kann zu Konflikten kommen zwischen:
-
-* Gerät und menschlicher Input
-* menschlicher und menschlicher Input
-* Dokument und Dokument
-
-Das Vorhandensein eines Konflikts:
-
-* ist kein Fehler
-* ist kein Fehler
-* macht das System nicht ungültig
-
-Ein Konflikt ist **Information**.
+Der Kern:
+- **Entfernt keine Pausen**
+- **unterbricht die Realität nicht**
 
 ---
 
-### 3.2 Konfliktdarstellung
+## 6. Schritt D – Deterministische Reihenfolge
 
-Konflikte werden in ODWS-CE explizit dargestellt.
+Die Zeitleiste ist:
+- eindeutig geordnet
+- deterministisch
+- reproduzierbar
 
-Ein Konflikt:
-
-* verweist auf die beteiligten Eingaben
-* identifiziert die überlappenden oder inkonsistenten Intervalle
-* ist rückverfolgbar und kontrollierbar
-
-Konflikte bleiben während der gesamten Berechnung erhalten.
-
-Sie werden niemals stillschweigend gelöst oder verworfen.
+Für identische Eingabe:
+- Der Kern muss immer **identische Ausgabestrukturen** erzeugen
 
 ---
 
-### 3.3 Schutz vor Überschreibung der Realität
+## 7. Schritt E – Bewahrung des räumlichen Kontexts
 
-ODWS-CE soll verhindern, dass die Realität durch Autorität ersetzt wird.
+Der Kern akzeptiert:
+- Koordinaten
+- Länder
+- Über Fahrtenschreiber oder andere Quellen eingegebene Standorte
 
-Daher:
-
-* Keine Eingabe kann eine andere Eingabe überschreiben
-* Keine Rolle kann frühere Datensätze löschen
-* Kein Berechnungsschritt kann Konflikte verbergen
-
-Jeder Versuch, die Realität neu zu interpretieren:
-
-* führt zu neuen Eingaben
-* Die Originalaufzeichnungen bleiben erhalten
-
-Dies garantiert Folgendes:
-
-* Mitarbeitereingaben bleiben sichtbar
-* Die historische Realität bleibt rekonstruierbar
-* Machtasymmetrie kann die Zeit nicht stillschweigend neu schreiben
+Normativ:
+- Geodaten werden zum Zeitpunkt der Eingabe nicht in Frage gestellt
+- Korrekturen werden als neue Tatsachen erfasst
+- räumliche Informationen sind **Teil der Realität**
 
 ---
 
-## Normative Zusammenfassung
+## 8. Schritt F – Vorbereitung für zukünftige Berechnungen
 
-In ODWS-CE:
+Obwohl der Kern **keine Löhne berechnet**, verlangt er normativ Folgendes:
 
-* Die Zeit ist fortlaufend, nicht geplant
-* Eingaben beschreiben die Realität, keine Autorität
-* Konflikte sind Daten, keine Mängel
-* Das Überschreiben der Realität ist strukturell unmöglich
+Der Kern muss ausreichend Informationen speichern für:
+- Arbeitszeitberechnung
+- Berechnung des Tagegeldes
+- Anspruchsfeststellung
+- Kostenerstattungsbewertung (z. B. private Fahrzeugnutzung)
+- Überprüfbarkeit der Berechnungen
 
-Alles übergeordnete Konzepte
-(Löhne, Legalität, Compliance, Berichterstattung)
-sind **auf diesem Fundament** gebaut,
-niemals drin.
+Dazu gehört:
+- genaue Zeit
+- Genaue Reihenfolge der Ereignisse
+- räumliche Kontinuität
+
+---
+
+## 9. Schritt G – Kerneingabe und -ausgabe
+
+### Eingabe:
+- Aufzeichnungen der Realität (technisch und manuell)
+- ohne rechtliche Bewertung
+
+### Ausgabe:
+- eine strukturierte, deterministische Zeitleiste der Realität
+- geeignet für weitere Berechnungs- und Interpretationsschichten
+
+Der Kern:
+- **schließt nicht mit rechtlichen Urteilen ab**
+- **öffnet Platz für nachfolgende Schichten**
+
+---
+
+## 10. Beziehung zu anderen Dokumenten
+
+Dieses Dokument ist **normativ**.
+
+Beschreibende Dokumente:
+- Beschreiben Sie reale Situationen
+- Erklären Sie, warum das Modell notwendig ist
+- Konflikte zwischen Realität und Erwartungen dokumentieren
+
+Interpretierende Dokumente:
+- Auseinandersetzung mit rechtlichen Auslegungen
+- nationale Besonderheiten
+- unterschiedliche Regulierungssysteme
+
+Rechenunterlagen:
+- spezifische Berechnungsalgorithmen definieren
+
+---
+
+## 11. Normative Zusammenfassung
+
+Der ODWS-CE-Kern:
+- transformiert die Realität, nicht die Interpretation
+- bewahrt Zeit, Raum und Ordnung
+- ist deterministisch und überprüfbar
+- schützt die Realität vor Autorität und Annahme
+
+Wenn etwas nicht aufgezeichnet wird,
+Der Kern **erfindet es nicht**.
+
+Wenn etwas aufgezeichnet wird,
+der Kern **stellt es nicht in Frage**.

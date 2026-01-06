@@ -9,230 +9,210 @@ odws:
 -->
 
 
-# Jádro ODWS-CE – základy času a vstupů
+# Jádro ODWS-CE – Normativní definice technického jádra
 
-Tento dokument normativně definuje **základní základy**
-**Otevřený pracovní prostor řidiče – kompenzační modul (ODWS-CE)**.
+Tento dokument **normativně definuje technické jádro (jádro) systému ODWS-CE**
+(Open Driver Worktime Space – Compensation Engine).
 
-Popisuje, **na čem je postaveno výpočetní jádro**,
-ne jak je implementován, optimalizován nebo prezentován uživatelům.
+dokument:
+- definuje **co jádro dělá a nedělá**
+- stanovuje **jasné hranice odpovědnosti**
+- popisuje **přeměnu reality v deterministickou strukturu**
 
-Účelem tohoto dokumentu je vytvořit **stabilní, neobchodovatelnou základnu**
-pro všechny implementace ODWS-CE.
+Neadresuje **ne**:
+- právní výklad
+- mzdy nebo výplatní páska
+- sankce
+- hodnocení lidského chování
 
----
-
-## Rozsah
-
-Tento dokument normativně definuje:
-
-1. Časová primitiva používaná ODWS-CE
-2. Povaha vstupů jako reprezentace reality
-3. Vztah mezi vstupy, časem a konflikty
-
-Explicitně **nedefinuje**:
-
-* mzdová nebo kompenzační pravidla
-* Logika dodržování zákonů
-* Chování uživatelského rozhraní nebo uživatelského rozhraní
-* úložiště, synchronizace nebo síťování
+Tyto oblasti jsou pokryty **dalšími vrstvami dokumentace**.
 
 ---
 
-## 1. Časová primitiva
+## 1. Účel jádra
 
-### 1.1 Čas jako spojitá osa
+Jádro ODWS-CE existuje, aby:
 
-ODWS-CE funguje na **souvislé časové ose**.
+- transformujte **záznamy reality** do jednotné, konzistentní časové osy
+- zachovat **deterministickou a auditovatelnou datovou strukturu**
+- poskytnout **stabilní základ pro následné výpočty**
 
-Čas je považován za:
+Jádro:
+- **neinterpretuje**
+- **nehodnotí**
+-**nesoudí**
 
-* kontinuální
-* lineární
-* monotónní
-
-ODWS-CE **nepracuje** na:
-
-* kalendářní dny
-* pracovní dny
-* směny
-* plánované bloky
-
-Takové koncepty mohou existovat pouze ve **interpretačních vrstvách**, nikdy v jádru.
+Jádro pouze **věrně přetváří realitu do výpočetně použitelné podoby**.
 
 ---
 
-### 1.2 Časový bod
+## 2. Základní principy
 
-**TimePoint** představuje jednu pozici na časové ose.
+Normálně platí:
 
-Časový bod:
-
-* má přesné časové razítko
-* je po vytvoření neměnný
-* je vždy spojeno s odkazem na zdroj
-
-Časové body:
-
-* nenaznačují význam
-* neznamenají práci
-* neznamenají odpovědnost
-
-Pouze lokalizují události v čase.
+- v kterémkoli reálném okamžiku **existuje přesně jeden skutečný stav**
+- časová osa je **nepřetržitá a nepřerušovaná**
+- agregace stavů je výsledkem **interpretace**, nikoli reality
+- technická zařízení (např. tachografy) jsou **zdroje signálu**, nikoli úřady
 
 ---
 
-### 1.3 Timewal
+## 3. Krok A – Získání surové reality
 
-**TimeInterval** představuje rozpětí mezi dvěma časovými body.
+### A.1 Zdroje reality
 
-A Timmentwal:
+Primárním vstupem jsou **záznamy řidičovy reality**, zejména:
 
-* má počáteční časový bod
-* má koncový časový bod
-* mohou obsahovat metadata nejistoty nebo spolehlivosti
+- data z karty řidiče v tachografu (např. formát `.ddd`)
+- další technické záznamy
+- manuální vstupy reality poskytované člověkem
 
-Časové intervaly:
+Jádro **normálně přijímá**, že:
 
-* se mohou překrývat
-* mohou být fragmentované
-* může být neúplný
+- žádné zařízení nezachycuje realitu úplně
+- ruční zadávání je **legitimní součástí reality**
+- skutečnost může být zaznamenána **se zpožděním**
 
-Neexistuje žádný požadavek, aby intervaly:
+### A.2 Pozice na pravdivost vstupu
 
-* sladit se dny
-* zarovnat na směny
-* v souladu se smluvními očekáváními
+Jádro:
+- **nepředpokládá nepravdu**
+- **neodmítá opravy**
+- **neposuzuje záměr**
 
-Realita má přednost před strukturou.
-
----
-
-## 2. Vstupy jako reprezentace reality
-
-### 2.1 Povaha vstupů
-
-Všechny vstupy v ODWS-CE představují **tvrzení o realitě**.
-
-Vstup:
-
-* popisuje, co se údajně stalo
-* netvrdí správnost
-* nepřepisuje ostatní vstupy
-
-Vstupy jsou **postřehy**, nikoli pravda.
+Každý záznam je považován za **prohlášení o skutečnosti**, dokud není nahrazeno opravou.
 
 ---
 
-### 2.2 Vstupní záznamy
+## 4. Krok B – Normalizace událostí
 
-Každý vstup je reprezentován jako **InputRecord**.
+Surové vstupy jsou transformovány do jednotných **událostí**.
 
-Vstupní záznam:
+Každá akce obsahuje minimálně:
+- časové razítko
+- typ události
+- identifikátor zdroje
 
-* odkazuje na jeden nebo více časových intervalů
-* identifikuje jeho zdroj
-* zaznamenává autorství a čas vytvoření
+Mezi typické změny režimu patří:
+- řízení
+- práce
+- jiná činnost
+- odpočinek
 
-Vstupní záznamy jsou:
-
-* neměnný
-* pouze příloha
-
-Po vytvoření vstupní záznam:
-
-* se nikdy nemění
-* se nikdy nesmaže
-* mohou být nahrazeny pouze dalšími vstupy
+Jádro:
+- **nemění význam režimů**
+- pouze je **normalizuje do společné reprezentace**
 
 ---
 
-### 2.3 Typy vstupních zdrojů
+## 5. Krok C – Konstrukce časové osy reality
 
-ODWS-CE rozpoznává několik tříd vstupních zdrojů, včetně, ale bez omezení na:
+Z normalizovaných událostí jádro vytváří:
 
-* automatizovaná zařízení (např. tachografy)
-* lidská prohlášení
-* odvozené záznamy (např. tabulky, skeny)
-* opravné nebo vysvětlující vstupy
+- **jedna souvislá časová osa**
+- bez mezer
+- bez přesahů
 
-Žádný vstupní zdroj není ve své podstatě autoritativní.
+Normálně:
+- všechny intervaly označené jako odpočinek jsou součástí časové osy
+- žádný interval reality není vyloučen nebo potlačen
+- přestávky jsou **stavy reality**, nikoli výjimky
 
-Autorita není **nikdy** implikována technologií, pozicí nebo rolí.
-
----
-
-## 3. Konflikty a koexistence vstupů
-
-### 3.1 Očekávají se konflikty
-
-Konflikty mezi vstupy jsou **běžnou vlastností reality**.
-
-Mohou nastat konflikty mezi:
-
-* vstup zařízení a člověka
-* lidský a lidský vklad
-* dokument a dokument
-
-Přítomnost konfliktu:
-
-* není chyba
-* není selhání
-* neznehodnocuje systém
-
-Konflikt je **informace**.
+Jádro:
+- **neodstraňuje přestávky**
+-**neruší realitu**
 
 ---
 
-### 3.2 Konfliktní reprezentace
+## 6. Krok D – Deterministické řazení
 
-Konflikty jsou v ODWS-CE výslovně uvedeny.
+Časová osa je:
+- jedinečně objednané
+- deterministický
+- reprodukovatelné
 
-Konflikt:
-
-* odkazuje na příslušné vstupy
-* identifikuje překrývající se nebo nekonzistentní intervaly
-* je sledovatelné a kontrolovatelné
-
-Konflikty jsou zachovány během výpočtu.
-
-Nikdy nejsou tiše vyřešeny nebo zahozeny.
+Pro identický vstup:
+- jádro musí vždy produkovat **identické výstupní struktury**
 
 ---
 
-### 3.3 Ochrana proti přepsání reality
+## 7. Krok E – Zachování prostorového kontextu
 
-ODWS-CE je navržen tak, aby zabránil nahrazení reality autoritou.
+Jádro přijímá:
+- souřadnice
+- země
+- místa zadaná prostřednictvím tachografu nebo jiných zdrojů
 
-Proto:
-
-* žádný vstup nemůže přepsat jiný vstup
-* žádná role nemůže vymazat předchozí záznamy
-* žádný výpočetní krok nemůže skrýt konflikty
-
-Jakýkoli pokus o reinterpretaci reality:
-
-* výsledkem jsou nové vstupy
-* ponechá původní záznamy nedotčené
-
-To zaručuje, že:
-
-* Vstupy zaměstnanců zůstávají viditelné
-* Historická realita zůstává rekonstruovatelná
-* asymetrie moci nemůže tiše přepsat čas
+Normálně:
+- prostorová data nejsou při vstupu zpochybněna
+- opravy se zaznamenávají jako nové skutečnosti
+- prostorové informace jsou **součástí reality**
 
 ---
 
-## Normativní shrnutí
+## 8. Krok F – Příprava na budoucí výpočty
 
-V ODWS-CE:
+Ačkoli jádro **nepočítá mzdy**, normativně vyžaduje, aby:
 
-* čas je nepřetržitý, není naplánovaný
-* Vstupy popisují realitu, nikoli autoritu
-* konflikty jsou data, nikoli vady
-* přepsání reality je strukturálně nemožné
+Jádro musí uchovávat dostatečné informace pro:
+- výpočet pracovní doby
+- výpočet příspěvku na živobytí
+- posouzení nároků
+- vyhodnocení náhrady nákladů (např. používání soukromého vozidla)
+- auditovatelnost výpočtů
 
-Všechny koncepty vyšší úrovně
-(mzdy, zákonnost, dodržování předpisů, výkaznictví)
-jsou postaveny **na tomto základu**,
-nikdy uvnitř.
+To zahrnuje:
+- přesný čas
+- přesné pořadí akcí
+- prostorová kontinuita
+
+---
+
+## 9. Krok G – Vstup a výstup jádra
+
+### Vstup:
+- záznamy skutečnosti (technické a manuálové)
+- bez právního hodnocení
+
+### Výstup:
+- strukturovaná, deterministická časová osa reality
+- vhodné pro další výpočetní a interpretační vrstvy
+
+Jádro:
+- **neuzavře se právními rozsudky**
+- **otevře prostor pro další vrstvy**
+
+---
+
+## 10. Vztah k jiným dokumentům
+
+Tento dokument je **normativní**.
+
+Popisné dokumenty:
+- popsat situace v reálném světě
+- vysvětlit, proč je model nezbytný
+- dokumentovat konflikty mezi realitou a očekáváním
+
+Výkladové dokumenty:
+- řešit právní výklady
+- národní specifika
+- různé regulační režimy
+
+Výpočtové dokumenty:
+- definovat konkrétní výpočetní algoritmy
+
+---
+
+## 11. Normativní shrnutí
+
+Jádro ODWS-CE:
+- transformuje realitu, ne interpretaci
+- zachovává čas, prostor a řád
+- je deterministický a auditovatelný
+- chrání realitu před autoritou a domněnkou
+
+Pokud něco není zaznamenáno,
+jádro **nevymyslí**.
+
+Pokud je něco zaznamenáno,
+jádro **nezpochybňuje**.

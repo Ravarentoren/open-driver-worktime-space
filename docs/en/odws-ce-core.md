@@ -4,230 +4,210 @@ odws:
   scope: odws-ce-core
 -->
 
-# ODWS-CE Core – Time and Inputs Foundations
+# ODWS-CE Core – Normative Definition of the Technical Core
 
-This document normatively defines the **core foundations** of the
-**Open Driver Worktime Space – Compensation Engine (ODWS-CE)**.
+This document **normatively defines the technical core (core) of the ODWS-CE system**
+(Open Driver Worktime Space – Compensation Engine).
 
-It describes **what the computation core is built upon**,
-not how it is implemented, optimized, or presented to users.
+The document:
+- defines **what the core does and does not do**
+- establishes **clear responsibility boundaries**
+- describes **the transformation of reality into a deterministic structure**
 
-The purpose of this document is to establish a **stable, non-negotiable base**
-for all ODWS-CE implementations.
+It does **not** address:
+- legal interpretation
+- wages or payroll
+- sanctions
+- evaluation of human behavior
 
----
-
-## Scope
-
-This document normatively defines:
-
-1. Time primitives used by ODWS-CE
-2. The nature of inputs as representations of reality
-3. The relationship between inputs, time, and conflicts
-
-It explicitly does **not** define:
-
-* wages or compensation rules
-* legal compliance logic
-* UI or UX behavior
-* storage, synchronization, or networking
+These areas are covered by **other documentation layers**.
 
 ---
 
-## 1. Time primitives
+## 1. Purpose of the Core
 
-### 1.1 Time as a continuous axis
+The ODWS-CE core exists to:
 
-ODWS-CE operates on a **continuous time axis**.
+- transform **records of reality** into a unified, consistent timeline
+- preserve a **deterministic and auditable data structure**
+- provide a **stable foundation for subsequent computations**
 
-Time is treated as:
+The core:
+- **does not interpret**
+- **does not assess**
+- **does not judge**
 
-* continuous
-* linear
-* monotonic
-
-ODWS-CE does **not** operate on:
-
-* calendar days
-* workdays
-* shifts
-* scheduled blocks
-
-Such concepts may exist only in **interpretation layers**, never in the core.
+The core only **faithfully transforms reality into a computationally usable form**.
 
 ---
 
-### 1.2 TimePoint
+## 2. Fundamental Principles
 
-A **TimePoint** represents a single position on the time axis.
+Normatively, the following applies:
 
-A TimePoint:
-
-* has a precise timestamp
-* is immutable once created
-* is always associated with a source reference
-
-TimePoints:
-
-* do not imply meaning
-* do not imply work
-* do not imply responsibility
-
-They only locate events in time.
+- at any real point in time, **exactly one real state exists**
+- the timeline is **continuous and unbroken**
+- aggregation of states is a result of **interpretation**, not reality
+- technical devices (e.g. tachographs) are **signal sources**, not authorities
 
 ---
 
-### 1.3 TimeInterval
+## 3. Step A – Acquisition of Raw Reality
 
-A **TimeInterval** represents a span between two TimePoints.
+### A.1 Sources of Reality
 
-A TimeInterval:
+The primary input consists of **records of the driver’s reality**, in particular:
 
-* has a start TimePoint
-* has an end TimePoint
-* may include uncertainty or confidence metadata
+- data from the driver card in a tachograph (e.g. `.ddd` format)
+- other technical records
+- manual reality inputs provided by a human
 
-TimeIntervals:
+The core **normatively accepts** that:
 
-* may overlap
-* may be fragmented
-* may be incomplete
+- no device captures reality completely
+- manual input is a **legitimate part of reality**
+- reality may be recorded **with delay**
 
-There is no requirement that intervals:
+### A.2 Position on Input Truthfulness
 
-* align to days
-* align to shifts
-* align to contractual expectations
+The core:
+- **does not presume falsehood**
+- **does not reject corrections**
+- **does not assess intent**
 
-Reality takes precedence over structure.
-
----
-
-## 2. Inputs as representations of reality
-
-### 2.1 Nature of inputs
-
-All inputs in ODWS-CE represent **claims about reality**.
-
-An input:
-
-* describes what allegedly happened
-* does not assert correctness
-* does not override other inputs
-
-Inputs are **observations**, not truth.
+Each record is treated as a **statement of reality** until replaced by a correction.
 
 ---
 
-### 2.2 Input records
+## 4. Step B – Event Normalization
 
-Each input is represented as an **InputRecord**.
+Raw inputs are transformed into unified **events**.
 
-An InputRecord:
+Each event contains at minimum:
+- a timestamp
+- an event type
+- a source identifier
 
-* references one or more TimeIntervals
-* identifies its source
-* records authorship and creation time
+Typical mode changes include:
+- driving
+- work
+- other activity
+- rest
 
-InputRecords are:
-
-* immutable
-* append-only
-
-Once created, an input record:
-
-* is never modified
-* is never deleted
-* may only be superseded by additional inputs
+The core:
+- **does not alter the meaning of modes**
+- only **normalizes them into a common representation**
 
 ---
 
-### 2.3 Types of input sources
+## 5. Step C – Construction of the Reality Timeline
 
-ODWS-CE recognizes multiple classes of input sources, including but not limited to:
+From normalized events, the core constructs:
 
-* automated devices (e.g. tachographs)
-* human declarations
-* derived records (e.g. spreadsheets, scans)
-* corrective or explanatory inputs
+- **a single continuous timeline**
+- without gaps
+- without overlaps
 
-No input source is inherently authoritative.
+Normatively:
+- all intervals marked as rest are part of the timeline
+- no interval of reality is excluded or suppressed
+- breaks are **states of reality**, not exceptions
 
-Authority is **never** implied by technology, position, or role.
-
----
-
-## 3. Conflicts and coexistence of inputs
-
-### 3.1 Conflicts are expected
-
-Conflicts between inputs are a **normal property of reality**.
-
-Conflicts may arise between:
-
-* device and human input
-* human and human input
-* document and document
-
-The presence of conflict:
-
-* is not an error
-* is not a failure
-* does not invalidate the system
-
-A conflict is **information**.
+The core:
+- **does not remove breaks**
+- **does not interrupt reality**
 
 ---
 
-### 3.2 Conflict representation
+## 6. Step D – Deterministic Ordering
 
-Conflicts are explicitly represented within ODWS-CE.
+The timeline is:
+- uniquely ordered
+- deterministic
+- reproducible
 
-A conflict:
-
-* references the involved inputs
-* identifies the overlapping or inconsistent intervals
-* is traceable and inspectable
-
-Conflicts are preserved throughout computation.
-
-They are never silently resolved or discarded.
+For identical input:
+- the core must always produce **identical output structures**
 
 ---
 
-### 3.3 Protection against overwriting reality
+## 7. Step E – Preservation of Spatial Context
 
-ODWS-CE is designed to prevent replacement of reality by authority.
+The core accepts:
+- coordinates
+- countries
+- locations entered via tachograph or other sources
 
-Therefore:
-
-* no input can overwrite another input
-* no role can erase previous records
-* no computation step can hide conflicts
-
-Any attempt to reinterpret reality:
-
-* results in new inputs
-* leaves the original records intact
-
-This guarantees that:
-
-* employee inputs remain visible
-* historical reality remains reconstructible
-* power asymmetry cannot silently rewrite time
+Normatively:
+- spatial data is not challenged at input time
+- corrections are recorded as new facts
+- spatial information is **part of reality**
 
 ---
 
-## Normative summary
+## 8. Step F – Preparation for Future Computations
 
-In ODWS-CE:
+Although the core **does not calculate wages**, it normatively requires that:
 
-* time is continuous, not scheduled
-* inputs describe reality, not authority
-* conflicts are data, not defects
-* overwriting reality is structurally impossible
+The core must retain sufficient information for:
+- working time computation
+- subsistence allowance calculation
+- entitlement assessment
+- cost reimbursement evaluation (e.g. private vehicle use)
+- auditability of computations
 
-All higher-level concepts
-(wages, legality, compliance, reporting)
-are built **on top of this foundation**,
-never inside it.
+This includes:
+- precise time
+- exact event ordering
+- spatial continuity
+
+---
+
+## 9. Step G – Core Input and Output
+
+### Input:
+- records of reality (technical and manual)
+- without legal evaluation
+
+### Output:
+- a structured, deterministic timeline of reality
+- suitable for further computation and interpretation layers
+
+The core:
+- **does not conclude with legal judgments**
+- **opens space for subsequent layers**
+
+---
+
+## 10. Relationship to Other Documents
+
+This document is **normative**.
+
+Descriptive documents:
+- describe real-world situations
+- explain why the model is necessary
+- document conflicts between reality and expectations
+
+Interpretative documents:
+- address legal interpretations
+- national specificities
+- differing regulatory regimes
+
+Computational documents:
+- define specific calculation algorithms
+
+---
+
+## 11. Normative Summary
+
+The ODWS-CE core:
+- transforms reality, not interpretation
+- preserves time, space, and order
+- is deterministic and auditable
+- protects reality from authority and assumption
+
+If something is not recorded,
+the core **does not invent it**.
+
+If something is recorded,
+the core **does not question it**.
