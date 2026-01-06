@@ -180,3 +180,28 @@ Translations are provided as a communication aid, not as a legal or normative so
 - Responsibility remains with the maintainer of the translation.
 
 The English documentation remains the authoritative source.
+
+---
+
+## 📑 Documentation consistency checks
+
+This repository includes a small helper script to verify **ODWS documentation layer consistency**.
+
+➡️ Layer check script:
+
+https://github.com/Ravarentoren/open-driver-worktime-space/blob/main/scripts/check_odws_layers.sh
+
+The script:
+- scans `docs/en/` documentation
+- reads ODWS metadata blocks
+- verifies that each document belongs to exactly one valid layer
+- reports missing or invalid layer declarations
+- does **not** modify any files
+
+### ⚒️ Usage
+
+bash:
+
+./scripts/check_odws_layers.sh
+
+---
