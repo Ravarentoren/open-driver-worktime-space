@@ -12,148 +12,148 @@ odws:
 
 
 
-# Documentation Translations (Normative Definition)
+# Dokumentationsübersetzungen (normative Definition)
 
-This document normatively describes the reality of documentation translations
-within the **Open Driver Worktime Space (ODWS)**.
+Dieses Dokument beschreibt normativ die Realität der Dokumentationsübersetzungen
+innerhalb des **Open Driver Worktime Space (ODWS)**.
 
-It does not prescribe tools, workflows, or enforcement.
-It defines **what translations are, and what they are not**.
-
----
-
-## 1. Authoritative language
-
-The authoritative ODWS documentation is written in **English**
-and located in `docs/en/`.
-
-All other language versions are:
-- derived
-- secondary
-- non-authoritative
+Es werden keine Tools, Arbeitsabläufe oder Durchsetzungsmaßnahmen vorgeschrieben.
+Es definiert **was Übersetzungen sind und was nicht**.
 
 ---
 
-## 2. Relationship to the original
+## 1. Maßgebliche Sprache
 
-A translation never inherits the authority of the original.
+Die maßgebliche ODWS-Dokumentation ist in **Englisch** verfasst.
+und befindet sich in „docs/en/“.
 
-In case of conflict,
-the English original **always prevails**.
-
----
-
-## 3. Purpose of translations
-
-Translations exist to:
-- improve accessibility
-- support understanding
-- enable discussion across languages
+Alle anderen Sprachversionen sind:
+- abgeleitet
+- sekundär
+- nicht maßgebend
 
 ---
 
-## 4. What translations are not
+## 2. Beziehung zum Original
 
-Translations are not:
-- normative sources
-- legal references
-- rule-defining documents
-- interpretative authorities
+Eine Übersetzung erbt niemals die Autorität des Originals.
 
----
-
-## 5. Nature of translated documents
-
-Translated documents are:
-- informational
-- explanatory
-- assistive
-
-They are not part of the normative layer,
-regardless of their quality.
+Im Konfliktfall
+das englische Original hat **immer Vorrang**.
 
 ---
 
-## 6. Origin of translations
+## 3. Zweck von Übersetzungen
 
-A translation may be:
-- machine-generated
-- human-edited
-- hybrid
-- partially corrected
-
-Its form does not change its status.
+Es gibt Übersetzungen für:
+- Verbesserung der Zugänglichkeit
+- Verständnis unterstützen
+- Ermöglichen Sie eine sprachübergreifende Diskussion
 
 ---
 
-## 7. Errors and deviations
+## 4. Welche Übersetzungen gibt es nicht?
 
-Errors and semantic deviations:
-- are expected
-- are not system failures
-- are not violations of ODWS principles
-
-They are inherent to translation.
-
----
-
-## 8. Responsibility
-
-Responsibility for a translation lies with:
-- the maintaining individual or team
-
-ODWS does not assume:
-- correctness
-- completeness
-- semantic equivalence
+Übersetzungen sind nicht:
+- normative Quellen
+- rechtliche Hinweise
+- Regeldefinierende Dokumente
+- interpretative Autoritäten
 
 ---
 
-## 9. Automation
+## 5. Art der übersetzten Dokumente
 
-Translation automation may exist
-but always serves a **supporting role**.
+Übersetzte Dokumente sind:
+- informativ
+- erklärend
+- unterstützend
 
-Automation:
-- does not define correctness
-- does not replace human judgment
-- holds no authority
-
----
-
-## 10. Human edits
-
-Human edits are:
-- allowed
-- expected
-- legitimate
-
-There is no requirement to:
-- preserve machine output
-- match automated translations
+Sie sind nicht Teil der normativen Schicht,
+unabhängig von ihrer Qualität.
 
 ---
 
-## 11. Separation of concerns
+## 6. Herkunft der Übersetzungen
 
-ODWS strictly separates:
-- normative definition (English documents)
-- translations as communication aids
-- implementation behavior
-- organizational responsibility
+Eine Übersetzung könnte sein:
+- maschinell generiert
+- Von Menschen bearbeitet
+- Hybrid
+- teilweise korrigiert
 
-This separation is intentional.
+Seine Form ändert seinen Status nicht.
 
 ---
 
-## 12. Reality summary
+## 7. Fehler und Abweichungen
 
-In ODWS:
+Fehler und semantische Abweichungen:
+- werden erwartet
+- sind keine Systemfehler
+- stellen keine Verstöße gegen die ODWS-Grundsätze dar
 
-- reality is defined by English text
-- translations describe reality
-- tools assist humans
-- responsibility remains human
+Sie sind der Übersetzung inhärent.
 
-If a translation is wrong,
-the system remains correct.
+---
+
+## 8. Verantwortung
+
+Die Verantwortung für eine Übersetzung liegt bei:
+- die betreuende Einzelperson oder das Team
+
+ODWS geht nicht davon aus:
+- Richtigkeit
+- Vollständigkeit
+- semantische Äquivalenz
+
+---
+
+## 9. Automatisierung
+
+Möglicherweise ist eine Übersetzungsautomatisierung vorhanden
+spielt aber immer eine **unterstützende Rolle**.
+
+Automatisierung:
+- definiert nicht die Richtigkeit
+- ersetzt nicht das menschliche Urteilsvermögen
+- besitzt keine Autorität
+
+---
+
+## 10. Menschliche Bearbeitungen
+
+Menschliche Bearbeitungen sind:
+- erlaubt
+- erwartet
+- legitim
+
+Es besteht keine Verpflichtung:
+- Maschinenleistung erhalten
+- Automatische Übersetzungen abgleichen
+
+---
+
+## 11. Trennung der Anliegen
+
+ODWS trennt strikt:
+- Normative Definition (englische Dokumente)
+- Übersetzungen als Kommunikationshilfen
+- Umsetzungsverhalten
+- organisatorische Verantwortung
+
+Diese Trennung ist beabsichtigt.
+
+---
+
+## 12. Zusammenfassung der Realität
+
+Im ODWS:
+
+- Die Realität wird durch englischen Text definiert
+- Übersetzungen beschreiben die Realität
+- Werkzeuge unterstützen den Menschen
+- Verantwortung bleibt menschlich
+
+Wenn eine Übersetzung falsch ist,
+Das System bleibt korrekt.

@@ -9,230 +9,230 @@ odws:
 -->
 
 
-# ODWS-CE Core – Time and Inputs Foundations
+# Ядро ODWS-CE – основы времени и входных данных
 
-This document normatively defines the **core foundations** of the
-**Open Driver Worktime Space – Compensation Engine (ODWS-CE)**.
+Этот документ нормативно определяет **основные основы**
+**Открытое пространство рабочего времени водителя — механизм компенсации (ODWS-CE)**.
 
-It describes **what the computation core is built upon**,
-not how it is implemented, optimized, or presented to users.
+Он описывает **на чем построено вычислительное ядро**,
+а не то, как это реализовано, оптимизировано или представлено пользователям.
 
-The purpose of this document is to establish a **stable, non-negotiable base**
-for all ODWS-CE implementations.
-
----
-
-## Scope
-
-This document normatively defines:
-
-1. Time primitives used by ODWS-CE
-2. The nature of inputs as representations of reality
-3. The relationship between inputs, time, and conflicts
-
-It explicitly does **not** define:
-
-* wages or compensation rules
-* legal compliance logic
-* UI or UX behavior
-* storage, synchronization, or networking
+Целью этого документа является создание **стабильной, не подлежащей обсуждению базы**.
+для всех реализаций ODWS-CE.
 
 ---
 
-## 1. Time primitives
+## Объем
 
-### 1.1 Time as a continuous axis
+Этот документ нормативно определяет:
 
-ODWS-CE operates on a **continuous time axis**.
+1. Примитивы времени, используемые ODWS-CE
+2. Природа входных данных как представлений реальности
+3. Взаимосвязь между входными данными, временем и конфликтами
 
-Time is treated as:
+Он явно **не** определяет:
 
-* continuous
-* linear
-* monotonic
-
-ODWS-CE does **not** operate on:
-
-* calendar days
-* workdays
-* shifts
-* scheduled blocks
-
-Such concepts may exist only in **interpretation layers**, never in the core.
+* правила заработной платы или компенсации
+* логика соблюдения законодательства
+* Поведение пользовательского интерфейса или UX
+* хранение, синхронизация или сеть
 
 ---
 
-### 1.2 TimePoint
+## 1. Примитивы времени
 
-A **TimePoint** represents a single position on the time axis.
+### 1.1 Время как непрерывная ось
 
-A TimePoint:
+ODWS-CE работает на **непрерывной временной оси**.
 
-* has a precise timestamp
-* is immutable once created
-* is always associated with a source reference
+Время рассматривается как:
 
-TimePoints:
+* непрерывный
+* линейный
+* монотонный
 
-* do not imply meaning
-* do not imply work
-* do not imply responsibility
+ODWS-CE **не** работает на:
 
-They only locate events in time.
+* календарные дни
+* рабочие дни
+* смены
+* запланированные блоки
 
----
-
-### 1.3 TimeInterval
-
-A **TimeInterval** represents a span between two TimePoints.
-
-A TimeInterval:
-
-* has a start TimePoint
-* has an end TimePoint
-* may include uncertainty or confidence metadata
-
-TimeIntervals:
-
-* may overlap
-* may be fragmented
-* may be incomplete
-
-There is no requirement that intervals:
-
-* align to days
-* align to shifts
-* align to contractual expectations
-
-Reality takes precedence over structure.
+Такие концепции могут существовать только на **уровнях интерпретации**, но никогда в ядре.
 
 ---
 
-## 2. Inputs as representations of reality
+### 1.2 Точка времени
 
-### 2.1 Nature of inputs
+**TimePoint** представляет одну позицию на оси времени.
 
-All inputs in ODWS-CE represent **claims about reality**.
+Точка времени:
 
-An input:
+* имеет точную временную метку
+* является неизменяемым после создания
+* всегда связан со ссылкой на источник
 
-* describes what allegedly happened
-* does not assert correctness
-* does not override other inputs
+Временные точки:
 
-Inputs are **observations**, not truth.
+* не подразумевают значения
+* не подразумевают работу
+* не предполагают ответственности
 
----
-
-### 2.2 Input records
-
-Each input is represented as an **InputRecord**.
-
-An InputRecord:
-
-* references one or more TimeIntervals
-* identifies its source
-* records authorship and creation time
-
-InputRecords are:
-
-* immutable
-* append-only
-
-Once created, an input record:
-
-* is never modified
-* is never deleted
-* may only be superseded by additional inputs
+Они лишь локализуют события во времени.
 
 ---
 
-### 2.3 Types of input sources
+### 1.3 Тайментвал
 
-ODWS-CE recognizes multiple classes of input sources, including but not limited to:
+**TimeInterval** представляет собой промежуток между двумя точками времени.
 
-* automated devices (e.g. tachographs)
-* human declarations
-* derived records (e.g. spreadsheets, scans)
-* corrective or explanatory inputs
+Тайментвал:
 
-No input source is inherently authoritative.
+* имеет начальную точку времени
+* имеет конечную точку времени
+* может включать метаданные неопределенности или достоверности
 
-Authority is **never** implied by technology, position, or role.
+Временные интервалы:
 
----
+*может пересекаться
+* может быть фрагментирован
+* может быть неполным
 
-## 3. Conflicts and coexistence of inputs
+Нет никаких требований, чтобы интервалы:
 
-### 3.1 Conflicts are expected
+* выровнять по дням
+* соответствие сменам
+* соответствовать договорным ожиданиям
 
-Conflicts between inputs are a **normal property of reality**.
-
-Conflicts may arise between:
-
-* device and human input
-* human and human input
-* document and document
-
-The presence of conflict:
-
-* is not an error
-* is not a failure
-* does not invalidate the system
-
-A conflict is **information**.
+Реальность имеет приоритет над структурой.
 
 ---
 
-### 3.2 Conflict representation
+## 2. Входные данные как представление реальности
 
-Conflicts are explicitly represented within ODWS-CE.
+### 2.1 Характер входных данных
 
-A conflict:
+Все входные данные в ODWS-CE представляют собой **утверждения о реальности**.
 
-* references the involved inputs
-* identifies the overlapping or inconsistent intervals
-* is traceable and inspectable
+Вход:
 
-Conflicts are preserved throughout computation.
+*описывает то, что предположительно произошло
+* не утверждает правильность
+* не отменяет другие входные данные
 
-They are never silently resolved or discarded.
-
----
-
-### 3.3 Protection against overwriting reality
-
-ODWS-CE is designed to prevent replacement of reality by authority.
-
-Therefore:
-
-* no input can overwrite another input
-* no role can erase previous records
-* no computation step can hide conflicts
-
-Any attempt to reinterpret reality:
-
-* results in new inputs
-* leaves the original records intact
-
-This guarantees that:
-
-* employee inputs remain visible
-* historical reality remains reconstructible
-* power asymmetry cannot silently rewrite time
+Входные данные — это **наблюдения**, а не истина.
 
 ---
 
-## Normative summary
+### 2.2 Ввод записей
 
-In ODWS-CE:
+Каждый ввод представлен как **InputRecord**.
 
-* time is continuous, not scheduled
-* inputs describe reality, not authority
-* conflicts are data, not defects
-* overwriting reality is structurally impossible
+Входная запись:
 
-All higher-level concepts
-(wages, legality, compliance, reporting)
-are built **on top of this foundation**,
-never inside it.
+* ссылается на один или несколько интервалов времени
+* указывает его источник
+* фиксирует авторство и время создания
+
+Входные записи:
+
+* неизменяемый
+* только добавление
+
+После создания входная запись:
+
+* никогда не модифицируется
+* никогда не удаляется
+* может быть заменено только дополнительными входами
+
+---
+
+### 2.3 Типы источников входного сигнала
+
+ODWS-CE распознает несколько классов входных источников, включая, помимо прочего:
+
+* автоматизированные устройства (например, тахографы)
+* человеческие декларации
+* производные записи (например, электронные таблицы, сканы)
+* корректирующие или поясняющие материалы
+
+Ни один источник входных данных не является по своей сути авторитетным.
+
+Авторитет **никогда** не подразумевается технологией, положением или ролью.
+
+---
+
+## 3. Конфликты и сосуществование входов
+
+### 3.1 Ожидаются конфликты
+
+Конфликты между входами — **нормальное свойство реальности**.
+
+Конфликты могут возникнуть между:
+
+* устройство и человеческий вклад
+* человеческий и человеческий вклад
+*документ и документ
+
+Наличие конфликта:
+
+* это не ошибка
+* это не провал
+* не делает систему недействительной
+
+Конфликт – это **информация**.
+
+---
+
+### 3.2 Представление конфликта
+
+Конфликты явно представлены в ODWS-CE.
+
+Конфликт:
+
+* ссылается на задействованные входы
+* идентифицирует перекрывающиеся или несовместимые интервалы
+* прослеживается и проверяется
+
+Конфликты сохраняются на протяжении всего расчета.
+
+Они никогда не решаются и не отбрасываются молча.
+
+---
+
+###3.3 Защита от перезаписи реальности
+
+ODWS-CE предназначен для предотвращения подмены реальности властью.
+
+Поэтому:
+
+* ни один ввод не может перезаписать другой ввод
+* ни одна роль не может стереть предыдущие записи
+* ни один шаг вычислений не может скрыть конфликты
+
+Любая попытка переосмыслить реальность:
+
+* приводит к появлению новых входных данных
+* оставляет исходные записи нетронутыми
+
+Это гарантирует, что:
+
+* Ввод сотрудников остается видимым
+* историческая реальность остается реконструируемой
+* асимметрия власти не может незаметно переписать время
+
+---
+
+## Нормативное резюме
+
+В ODWS-CE:
+
+* время непрерывное, не запланированное
+* входные данные описывают реальность, а не авторитет
+* конфликты — это данные, а не дефекты
+* перезаписать реальность структурно невозможно
+
+Все концепции более высокого уровня
+(заработная плата, законность, соблюдение требований, отчетность)
+построены **на этом фундаменте**,
+никогда внутри него.

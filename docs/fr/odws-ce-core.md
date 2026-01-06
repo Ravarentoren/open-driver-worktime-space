@@ -118,3 +118,121 @@ Une entrée :
 
 * décrit ce qui se serait passé
 * n'affirme pas l'exactitude
+* ne remplace pas les autres entrées
+
+Les entrées sont des **observations**, pas la vérité.
+
+---
+
+### 2.2 Enregistrements d'entrée
+
+Chaque entrée est représentée par un **InputRecord**.
+
+Un InputRecord :
+
+* fait référence à un ou plusieurs TimeIntervals
+* identifie sa source
+* enregistre la paternité et le temps de création
+
+Les enregistrements d'entrée sont :
+
+* immuable
+* ajout uniquement
+
+Une fois créé, un enregistrement d'entrée :
+
+* n'est jamais modifié
+* n'est jamais supprimé
+* ne peut être remplacé que par des entrées supplémentaires
+
+---
+
+### 2.3 Types de sources d'entrée
+
+ODWS-CE reconnaît plusieurs classes de sources d'entrée, y compris, mais sans s'y limiter :
+
+* appareils automatisés (par exemple tachygraphes)
+* déclarations humaines
+* enregistrements dérivés (par exemple, feuilles de calcul, analyses)
+* entrées correctives ou explicatives
+
+Aucune source d’entrée ne fait intrinsèquement autorité.
+
+L'autorité n'est **jamais** implicite par la technologie, le poste ou le rôle.
+
+---
+
+## 3. Conflits et coexistence des intrants
+
+### 3.1 Des conflits sont attendus
+
+Les conflits entre les entrées sont une **propriété normale de la réalité**.
+
+Des conflits peuvent survenir entre :
+
+* appareil et contribution humaine
+*apport humain et humain
+* document et document
+
+La présence d'un conflit :
+
+* n'est pas une erreur
+*n'est pas un échec
+* n'invalide pas le système
+
+Un conflit est une **information**.
+
+---
+
+### 3.2 Représentation des conflits
+
+Les conflits sont explicitement représentés dans ODWS-CE.
+
+Un conflit :
+
+* fait référence aux entrées impliquées
+* identifie les intervalles qui se chevauchent ou qui sont incohérents
+* est traçable et inspectable
+
+Les conflits sont préservés tout au long du calcul.
+
+Ils ne sont jamais résolus ou rejetés en silence.
+
+---
+
+### 3.3 Protection contre l'écrasement de la réalité
+
+ODWS-CE est conçu pour empêcher le remplacement de la réalité par l’autorité.
+
+Donc:
+
+* aucune entrée ne peut écraser une autre entrée
+* aucun rôle ne peut effacer les enregistrements précédents
+* aucune étape de calcul ne peut masquer les conflits
+
+Toute tentative de réinterprétation de la réalité :
+
+* entraîne de nouvelles entrées
+* laisse les enregistrements originaux intacts
+
+Cela garantit que :
+
+* les contributions des employés restent visibles
+* la réalité historique reste reconstructible
+* L'asymétrie de pouvoir ne peut pas réécrire le temps en silence
+
+---
+
+## Résumé normatif
+
+Dans ODWS-CE :
+
+* le temps est continu, non programmé
+* les entrées décrivent la réalité, pas l'autorité
+* les conflits sont des données, pas des défauts
+* l'écrasement de la réalité est structurellement impossible
+
+Tous les concepts de niveau supérieur
+(salaires, légalité, conformité, reporting)
+sont construits **sur cette fondation**,
+jamais à l'intérieur.

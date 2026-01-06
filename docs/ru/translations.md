@@ -12,148 +12,148 @@ odws:
 
 
 
-# Documentation Translations (Normative Definition)
+# Переводы документации (нормативное определение)
 
-This document normatively describes the reality of documentation translations
-within the **Open Driver Worktime Space (ODWS)**.
+Этот документ нормативно описывает реальность перевода документации.
+в пределах **Открытого пространства рабочего времени драйверов (ODWS)**.
 
-It does not prescribe tools, workflows, or enforcement.
-It defines **what translations are, and what they are not**.
-
----
-
-## 1. Authoritative language
-
-The authoritative ODWS documentation is written in **English**
-and located in `docs/en/`.
-
-All other language versions are:
-- derived
-- secondary
-- non-authoritative
+Он не предписывает инструменты, рабочие процессы или соблюдение требований.
+Он определяет **какими являются переводы, а чем нет**.
 
 ---
 
-## 2. Relationship to the original
+## 1. Авторитетный язык
 
-A translation never inherits the authority of the original.
+Авторитетная документация ODWS написана на **английском языке**.
+и находится в `docs/en/`.
 
-In case of conflict,
-the English original **always prevails**.
-
----
-
-## 3. Purpose of translations
-
-Translations exist to:
-- improve accessibility
-- support understanding
-- enable discussion across languages
+Все остальные языковые версии:
+- полученный
+- вторичный
+- неавторитетный
 
 ---
 
-## 4. What translations are not
+## 2. Отношение к оригиналу
 
-Translations are not:
-- normative sources
-- legal references
-- rule-defining documents
-- interpretative authorities
+Перевод никогда не наследует авторитет оригинала.
 
----
-
-## 5. Nature of translated documents
-
-Translated documents are:
-- informational
-- explanatory
-- assistive
-
-They are not part of the normative layer,
-regardless of their quality.
+В случае конфликта,
+английский оригинал **всегда преобладает**.
 
 ---
 
-## 6. Origin of translations
+## 3. Цель переводов
 
-A translation may be:
-- machine-generated
-- human-edited
-- hybrid
-- partially corrected
-
-Its form does not change its status.
+Переводы существуют для:
+- улучшить доступность
+- поддерживать понимание
+- включить обсуждение на разных языках
 
 ---
 
-## 7. Errors and deviations
+## 4. Чего нет в переводах
 
-Errors and semantic deviations:
-- are expected
-- are not system failures
-- are not violations of ODWS principles
-
-They are inherent to translation.
-
----
-
-## 8. Responsibility
-
-Responsibility for a translation lies with:
-- the maintaining individual or team
-
-ODWS does not assume:
-- correctness
-- completeness
-- semantic equivalence
+Переводы не являются:
+- нормативные источники
+- юридические ссылки
+- нормативные документы
+- органы интерпретации
 
 ---
 
-## 9. Automation
+## 5. Характер переводимых документов
 
-Translation automation may exist
-but always serves a **supporting role**.
+Переведенные документы – это:
+- информационный
+- пояснительный
+- вспомогательный
 
-Automation:
-- does not define correctness
-- does not replace human judgment
-- holds no authority
-
----
-
-## 10. Human edits
-
-Human edits are:
-- allowed
-- expected
-- legitimate
-
-There is no requirement to:
-- preserve machine output
-- match automated translations
+Они не являются частью нормативного слоя,
+независимо от их качества.
 
 ---
 
-## 11. Separation of concerns
+## 6. Происхождение переводов
 
-ODWS strictly separates:
-- normative definition (English documents)
-- translations as communication aids
-- implementation behavior
-- organizational responsibility
+Перевод может быть:
+- машинный
+- отредактировано человеком
+- гибрид
+- частично исправлено
 
-This separation is intentional.
+Его форма не меняет его статуса.
 
 ---
 
-## 12. Reality summary
+##7. Ошибки и отклонения
 
-In ODWS:
+Ошибки и смысловые отклонения:
+- ожидаются
+- не являются системными сбоями
+- не являются нарушением принципов ODWS
 
-- reality is defined by English text
-- translations describe reality
-- tools assist humans
-- responsibility remains human
+Они присущи переводу.
 
-If a translation is wrong,
-the system remains correct.
+---
+
+## 8. Ответственность
+
+Ответственность за перевод несет:
+- поддерживающий человек или команда
+
+ODWS не предполагает:
+- правильность
+- полнота
+- смысловая эквивалентность
+
+---
+
+## 9. Автоматизация
+
+Автоматизация перевода может существовать
+но всегда выполняет **вспомогательную роль**.
+
+Автоматизация:
+- не определяет правильность
+- не заменяет человеческое суждение
+- не имеет полномочий
+
+---
+
+## 10. Правки человека
+
+Человеческие правки:
+- допустимый
+- ожидал
+- законный
+
+Нет никаких требований:
+- сохранить производительность машины
+- сопоставлять автоматические переводы
+
+---
+
+## 11. Разделение задач
+
+ODWS строго разделяет:
+- нормативное определение (англоязычные документы)
+- переводы как средства общения
+- поведение реализации
+- организационная ответственность
+
+Это разделение является намеренным.
+
+---
+
+## 12. Резюме реальности
+
+В ОДВС:
+
+- реальность определяется текстом на английском языке
+- переводы описывают реальность
+- инструменты помогают человеку
+- ответственность остается человеческой
+
+Если перевод неправильный,
+система остается корректной.

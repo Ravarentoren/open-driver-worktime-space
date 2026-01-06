@@ -1,60 +1,84 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# ============================
-# CONFIG
-# ============================
+# ============================================================
+# ODWS Documentation Translation Script
+#
+# Default behavior:
+# - translates ONLY missing files
+# - prints INFO when a file is created
+# - silent when nothing changes
+#
+# Flags:
+#   DEBUG=true   → verbose decision log
+#   FORCE=true   → retranslate everything
+#   OFFLINE=true → no network, copy-only (dry run)
+# ============================================================
 
 SOURCE_LANG="en"
 TARGET_LANGS=("cs" "de" "fr" "ru")
 DOCS_DIR="docs"
 
 DEBUG="${DEBUG:-false}"
-OFFLINE="${OFFLINE:-false}"
 FORCE="${FORCE:-false}"
+OFFLINE="${OFFLINE:-false}"
 
-# ============================
-# LOGGING
-# ============================
+# ------------------------------------------------------------
+# Logging helpers
+# ------------------------------------------------------------
 
-log() {
+debug() {
   [[ "$DEBUG" == "true" ]] && echo "[DEBUG] $*"
 }
 
-# ============================
-# TRANSLATION BACKEND
-# ============================
+info() {
+  echo "[INFO] $*"
+}
+
+# ------------------------------------------------------------
+# Translation backend
+# ------------------------------------------------------------
 
 translate() {
   local lang="$1"
+
   if [[ "$OFFLINE" == "true" ]]; then
     cat
-  else
+    return
+  fi
+
+  if command -v trans >/dev/null 2>&1; then
     trans -b :"$lang" 2>/dev/null || cat
+  else
+    cat
   fi
 }
 
-# ============================
-# TRANSLATE SINGLE FILE
-# ============================
+# ------------------------------------------------------------
+# Translate one file if needed
+# ------------------------------------------------------------
 
 translate_file() {
   local src="$1"
   local lang="$2"
   local dst="$3"
 
-  # pokud cílový soubor existuje a není FORCE, přeskoč
+  # Skip existing unless FORCE=true
   if [[ -f "$dst" && "$FORCE" != "true" ]]; then
-    log "↷ Skipping existing: $dst"
+    debug "Skipping existing: $dst"
     return
   fi
 
-  log "→ Translating: $src → $dst"
+  mkdir -p "$(dirname "$dst")"
 
-  # metadata = první HTML komentář
+  if [[ -f "$dst" ]]; then
+    info "Recreating: $dst"
+  else
+    info "Creating:   $dst"
+  fi
+
+  # Extract first HTML comment as metadata
   metadata="$(sed -n '1,/-->/p' "$src")"
-
-  # body = vše za metadata
   body="$(sed '1,/-->/d' "$src")"
 
   {
@@ -68,22 +92,21 @@ translate_file() {
   } > "$dst"
 }
 
-# ============================
-# MAIN
-# ============================
+# ------------------------------------------------------------
+# Main
+# ------------------------------------------------------------
 
-log "Starting documentation translation"
+debug "Starting documentation translation"
 
 for lang in "${TARGET_LANGS[@]}"; do
-  target_dir="$DOCS_DIR/$lang"
-  mkdir -p "$target_dir"
+  debug "Processing language: $lang"
 
   for src in "$DOCS_DIR/$SOURCE_LANG"/*.md; do
     filename="$(basename "$src")"
-    dst="$target_dir/$filename"
+    dst="$DOCS_DIR/$lang/$filename"
 
     translate_file "$src" "$lang" "$dst"
   done
 done
 
-log "Translation finished"
+debug "Translation finished"

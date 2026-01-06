@@ -154,11 +154,7 @@ The script:
 
 bash:
 
-- Normal safe run
-
-./scripts/translate_docs.sh             
-
-- Show actions
+- Normal safe run + Show actions
 
 DEBUG=true ./scripts/translate_docs.sh  
 
@@ -166,9 +162,14 @@ DEBUG=true ./scripts/translate_docs.sh
 
 FORCE=true ./scripts/translate_docs.sh  
 
-- No network
+- Dry run & No network
 
 OFFLINE=true ./scripts/translate_docs.sh
+
+- Full rebuild with verbose output
+
+FORCE=true DEBUG=true ./scripts/translate_docs.sh
+
 ### 🎓 Philosophy
 
 Translations are provided as a communication aid, not as a legal or normative source.
