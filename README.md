@@ -180,13 +180,16 @@ bash:
 
 DEBUG=true ./scripts/translate_docs.sh  
 
+
 - Overwrite all
 
 FORCE=true ./scripts/translate_docs.sh  
 
+
 - Dry run & No network
 
 OFFLINE=true ./scripts/translate_docs.sh
+
 
 - Full rebuild with verbose output
 
