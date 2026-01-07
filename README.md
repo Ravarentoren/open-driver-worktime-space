@@ -15,9 +15,11 @@ Open Driver Worktime Space (ODWS) is a human-centered model
 for describing and computing driver worktime as it actually happened.
 
 It separates:
-- **facts** from **interpretation**
-- **input** from **computation**
-- **reality** from **administrative decisions**
+- **facts** from **interpretation**,
+
+- **input** from **computation**,
+
+- **reality** from **administrative decisions**.
 
 ODWS does not judge.  
 ODWS records, computes, and explains.
@@ -26,19 +28,19 @@ ODWS records, computes, and explains.
 
 ## 🧠 Core Principles
 
-- **Reality first**  
+**Reality first**  
   What happened is always recorded before asking whether it was allowed.
 
-- **Deterministic computation**  
+**Deterministic computation**  
   Same inputs always produce the same results, with a full trace.
 
-- **Human-correctable inputs**  
+**Human-correctable inputs**  
   Delayed recognition and correction are normal properties of reality.
 
-- **Separation of concerns**  
+**Separation of concerns**  
   Facts, computation, legal meaning, and payroll decisions are distinct layers.
 
-- **Technology is not authority**  
+**Technology is not authority**  
   Devices, spreadsheets, and systems are signals — not truth.
 
 ---
@@ -47,17 +49,17 @@ ODWS records, computes, and explains.
 
 ODWS is designed for:
 
-- **Professional drivers**  
-  who need transparent, explainable records of their work
+**Professional drivers**
+who need transparent, explainable records of their work.
 
-- **Employers**  
-  who need auditable and reproducible computations
+**Employers**
+who need auditable and reproducible computations,
 
-- **Developers**  
-  who want a clear, deterministic model instead of spreadsheet chaos
+**Developers**
+who want a clear, deterministic model instead of spreadsheet chaos.
 
-- **Auditors and inspectors**  
-  who need to understand *how* a result was obtained
+**Auditors and inspectors**
+who need to understand *how* a result was obtained.
 
 ---
 
@@ -66,10 +68,14 @@ ODWS is designed for:
 The normative specification lives in the `docs/` directory.
 
 Documentation is:
-- explicit
-- human-readable
-- machine-processable
-- available in multiple languages
+
+- explicit,
+
+- human-readable,
+
+- machine-processable,
+
+- available in multiple languages.
 
  If it is not written down, it does not exist.
 
@@ -85,8 +91,10 @@ is developed separately:
 ➡️ https://github.com/Ravarentoren/odws-compensation-engine
 
 The separation is intentional:
-- this repository focuses on concepts and rules
-- implementation repositories focus on concrete behavior and tooling
+
+- this repository focuses on concepts and rules,
+  
+- implementation repositories focus on concrete behavior and tooling.
 
 ---
 
@@ -113,10 +121,14 @@ No individual, organization, or system
 has a patent on reason, truth, or understanding.
 
 What exists here is the result of:
-- long-term sharing of experience
-- learning technical constraints
-- observing social and operational reality
-- correcting mistakes over time
+
+- long-term sharing of experience,
+
+- learning technical constraints,
+
+- observing social and operational reality,
+
+- correcting mistakes over time.
 
 ODWS does not claim completeness or infallibility.  
 It exists to make assumptions visible  
@@ -129,10 +141,14 @@ and reasoning inspectable.
 This project is licensed under the **Apache License 2.0**.
 
 The license is chosen to:
-- allow free use and redistribution
-- enable modification and extension
-- avoid personal or institutional lock-in
-- support long-term transfer and stewardship
+
+- allow free use and redistribution,
+
+- enable modification and extension,
+
+- avoid personal or institutional lock-in,
+
+- support long-term transfer and stewardship.
 
 ---
 
@@ -140,15 +156,21 @@ The license is chosen to:
 
 This repository includes a **local-only documentation translation helper** intended for a **single responsible maintainer**.
 
-➡️ Translation script:  
+➡️ Translation script:
+
 https://github.com/Ravarentoren/open-driver-worktime-space/blob/main/scripts/translate_docs.sh
 
 The script:
-- translates documentation from `docs/en/` into selected languages
-- preserves the original English documents as authoritative
-- keeps exactly one metadata block per document
-- is designed to run **locally** (e.g. Termux, Linux, macOS)
-- does **not** enforce CI, checks, or automatic overwrites
+
+- translates documentation from `docs/en/` into selected languages,
+
+- preserves the original English documents as authoritative,
+
+- keeps exactly one metadata block per document,
+
+- is designed to run **locally** (e.g. Termux, Linux, macOS),
+
+- does **not** enforce CI, checks, or automatic overwrites.
 
 ### ⚒️ Usage
 
@@ -173,6 +195,7 @@ FORCE=true DEBUG=true ./scripts/translate_docs.sh
 ### 🎓 Philosophy
 
 Translations are provided as a communication aid, not as a legal or normative source.
+
 - Human-reviewed edits are allowed and expected.
 
 - No automatic checks enforce equality with machine translations.
@@ -192,11 +215,16 @@ This repository includes a small helper script to verify **ODWS documentation la
 https://github.com/Ravarentoren/open-driver-worktime-space/blob/main/scripts/check_odws_layers.sh
 
 The script:
-- scans `docs/en/` documentation
-- reads ODWS metadata blocks
-- verifies that each document belongs to exactly one valid layer
-- reports missing or invalid layer declarations
-- does **not** modify any files
+
+- scans `docs/en/` documentation,
+
+- reads ODWS metadata blocks,
+
+- verifies that each document belongs to exactly one valid layer,
+
+- reports missing or invalid layer declarations,
+
+- does **not** modify any files.
 
 ### ⚒️ Usage
 
