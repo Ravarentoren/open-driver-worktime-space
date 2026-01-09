@@ -5,163 +5,176 @@
 <!--
 odws:
   layer: normative
-  scope: documentation-layers
+  domain: documentation
+  topic: documentation-layers
+  version: 2.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
 
 
 
+# Documentation Layers in ODWS (Normative Definition)
 
-# Couches de documentation dans ODWS (définition normative)
+This document **normatively defines the complete and closed set of
+documentation layers** used within the **Open Driver Worktime Space (ODWS)**.
 
-Ce document **définit de manière normative les couches de documentation** utilisées dans
-le **Open Driver Worktime Space (ODWS)**.
+Its purpose is to:
+- ensure long-term clarity and maintainability,
+- prevent uncontrolled growth of document categories,
+- keep the documentation navigable for future maintainers.
 
-Son objectif est de :
-- nommer les types de déclarations,
-- des responsabilités distinctes,
-- éviter de mélanger réalité, interprétation et calcul.
-
-Ce document **ne prescrit pas de flux de travail**, d'outils ou de rôles.
-Il définit uniquement la **nature des documents**.
+This document defines **what kinds of documents may exist**.
+It does **not** prescribe tools, workflows, or authorship.
 
 ---
+
 
 ## 1. Principe des couches
 
-Chaque document dans ODWS **doit appartenir exactement à un seul calque**.
+Chaque fichier de documentation dans ODWS **DOIT appartenir exactement à une seule couche**.
 
 Une couche définit :
-- le type de déclarations que contient un document,
-- comment il peut être utilisé,
-- son rapport au réel et au calcul.
+- la nature des déclarations contenues dans un document,
+- comment le document peut être utilisé,
+- son rapport à la réalité, à l'interprétation et au calcul.
 
 Un calque ne définit **pas** :
-- la paternité,
-- usage organisationnel,
-- l'exactitude ou l'exhaustivité.
+- l'exactitude ou l'autorité des auteurs,
+- les processus organisationnels,
+- les détails de mise en œuvre.
 
 ---
 
-## 2. Aperçu des couches définies
+## 2. Ensemble fermé de couches de documentation
 
-ODWS définit les couches de documentation suivantes :
+ODWS définit l'**ensemble fermé et exhaustif** de couches de documentation suivant :
 
 - `normatif`
 - `descriptif`
-- `interprétatif`
-- `informatique`
-- 'orientation'
+- 'conceptuel'
+- 'analytique'
+- `contextuel`
+- 'procédural'
+- 'référence'
+- « gouvernance »
 
-La liste est **ouverte à une extension future**,
-mais chaque couche doit être **explicitement nommée et définie**.
+**Aucune autre couche de documentation n'est autorisée.**
 
----
-
-## 3. Normatif
-
-La couche « normative » :
-
-- définit **ce qu'est ODWS**
-- établit des **fondations non négociables**
-- définit les **limites du système**
-
-Documents normatifs :
-- ne sont pas des exemples
-- ne sont pas des recommandations
-- ne sont pas des explications
-
-Ils servent de **référence de référence** pour tout le reste.
+Toute introduction d'une nouvelle couche **EXIGE une modification explicite de ce document**.
 
 ---
 
-## 4. Descriptif
+## 3. Couche normative
 
-La couche « descriptive » :
+La couche « normative » définit **ce qui est vrai dans ODWS**.
 
-- décrit la réalité, le contexte et les observations
-- explique **comment les choses existent dans la pratique**
-- capture l'expérience et l'environnement
+Il:
+- établit des règles non négociables,
+- définit les limites du système,
+- utilise un langage normatif (DOIT, DEVRA, NE DOIT PAS).
 
-Documents descriptifs :
-- ne pas modifier les définitions normatives
-- n'interprète pas la loi
-- ne définit pas les calculs
+Les documents normatifs sont la **source de vérité** pour l'ODWS.
 
 ---
 
-## 5. Interprétatif
+## 4. Couche descriptive
 
-La couche « interprétative » :
+La couche « descriptive » explique et décrit la réalité telle qu'observée.
 
-- interprète le contenu normatif et descriptif
-- décrit les **interprétations possibles**
-- présente des points de vue ou des régimes différents
+Il:
+- fournit des explications et un contexte,
+- décrit comment les choses existent dans la pratique,
+- n'introduit ni règles ni obligations.
 
-Interprétations :
-- ne sont pas contraignants
-- peut différer selon les pays, les organisations ou les équipes
-- peuvent se contredire
-
-Le conflit d'interprétation **n'est pas une erreur système**.
+Les documents descriptifs **ne modifient jamais le contenu normatif**.
 
 ---
 
-## 6. Informatique
+## 5. Couche conceptuelle
 
-La couche « informatique » :
+La couche « conceptuelle » définit les modèles mentaux et les abstractions.
 
-- définit des **règles de calcul déterministes**
-- spécifie les algorithmes, les transformations et la logique
-- sert d'entrée pour les implémentations
-
-Documents informatiques :
-- ne jugez pas la légalité ou l'équité
-- n'évalue pas la réalité
-- **calculer uniquement à partir d'entrées définies**
+Il:
+- introduit les concepts et la terminologie,
+- explique comment penser le domaine,
+- favorise la compréhension sans prescrire un comportement.
 
 ---
 
-## 7. Conseils
+## 6. Couche analytique
 
-La couche « guidage » :
+La couche « analytique » examine les conséquences et les implications.
 
-- fournit des recommandations, des instructions et des exemples
-- aide les humains à utiliser le système
-- tient compte des facteurs humains
-
-Conseils:
-- est sans engagement
-- n'altère aucune autre couche
-- peut être remplacé ou ignoré
+Il:
+- analyse les impacts des règles ou des décisions,
+- explore les cas limites et les compromis,
+- ne définit pas de nouvelles règles.
 
 ---
 
-## 8. Séparation des responsabilités
+## 7. Couche contextuelle
 
-ODWS **sépare strictement** :
+La couche « contextuelle » décrit l'environnement dans lequel ODWS fonctionne.
 
-- définition de la réalité
-- description de la réalité
-- interprétation
-- calcul
-- un accompagnement humain
-
-Cette séparation est **intentionnelle et protectrice**.
+Il:
+- capture le contexte juridique, social et opérationnel,
+- explique les contraintes externes,
+- ne réinterprète ni ne remplace les règles ODWS.
 
 ---
 
-## 9. Résumé normatif
+## 8. Couche procédurale
+
+La couche « procédurale » décrit **comment les choses sont faites**.
+
+Il:
+- documente les flux de travail et les processus,
+- est principalement destiné aux mainteneurs,
+- est non normatif et remplaçable.
+
+---
+
+## 9. Couche de référence
+
+La couche « référence » fournit du matériel de recherche structuré.
+
+Il:
+- contient des définitions, des mappages et des résumés,
+- est optimisé pour un accès rapide,
+- n'introduit pas d'interprétation.
+
+---
+
+## 10. Couche de gouvernance
+
+La couche « gouvernance » définit la gestion du projet.
+
+Il:
+- décrit les processus de prise de décision,
+- définit les règles de maintenance et de changement,
+- assure la continuité à long terme de l'ODWS.
+
+---
+
+## 11. Séparation et discipline
+
+Les couches de documentation ODWS ** NE DOIVENT PAS être mélangées **.
+
+La séparation des couches est intentionnelle et protège :
+- la réalité issue de l'autorité,
+- calcul à partir de l'interprétation,
+- les mainteneurs du chaos structurel.
+
+---
+
+## 12. Résumé normatif
 
 Dans ODWS :
-
-- les calques définissent la nature des déclarations
-- chaque document appartient exactement à un calque
-- les couches ne doivent pas être mélangées
-- les conflits entre les couches sont des informations, pas des défauts
-
-Ce modèle protège :
-- la réalité de l'autorité
-- calcul à partir de l'interprétation
-- les humains des systèmes
+- l'ensemble des couches de documentation est fermé,
+- chaque document appartient à exactement un calque,
+- les calques sont définis par souci de clarté et non d'exhaustivité,
+- la simplicité structurelle est un objectif de conception.

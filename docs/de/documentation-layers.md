@@ -5,163 +5,176 @@
 <!--
 odws:
   layer: normative
-  scope: documentation-layers
+  domain: documentation
+  topic: documentation-layers
+  version: 2.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
 
 
 
+# Documentation Layers in ODWS (Normative Definition)
 
-# Dokumentationsebenen in ODWS (normative Definition)
+This document **normatively defines the complete and closed set of
+documentation layers** used within the **Open Driver Worktime Space (ODWS)**.
 
-Dieses Dokument definiert **normativ die darin verwendeten Dokumentationsebenen**
-der **Open Driver Worktime Space (ODWS)**.
+Its purpose is to:
+- ensure long-term clarity and maintainability,
+- prevent uncontrolled growth of document categories,
+- keep the documentation navigable for future maintainers.
 
-Sein Zweck ist:
-- Arten von Aussagen benennen,
-- getrennte Verantwortlichkeiten,
-- verhindern, dass Realität, Interpretation und Berechnung vermischt werden.
-
-Dieses Dokument schreibt keine Arbeitsabläufe, Tools oder Rollen vor.
-Es definiert nur die **Natur von Dokumenten**.
+This document defines **what kinds of documents may exist**.
+It does **not** prescribe tools, workflows, or authorship.
 
 ---
+
 
 ## 1. Schichtenprinzip
 
-Jedes Dokument in ODWS **muss genau einer Ebene angehören**.
+Jede Dokumentationsdatei in ODWS **MUSS zu genau einer Ebene gehören**.
 
 Eine Ebene definiert:
-- die Art der Aussagen, die ein Dokument enthält,
-- wie es verwendet werden kann,
-- seine Beziehung zur Realität und zur Berechnung.
+- die Art der in einem Dokument enthaltenen Aussagen,
+- wie das Dokument verwendet werden darf,
+- seine Beziehung zur Realität, Interpretation und Berechnung.
 
 Eine Ebene definiert **nicht** Folgendes:
-- Urheberschaft,
-- organisatorische Nutzung,
-- Richtigkeit oder Vollständigkeit.
+- Korrektheit oder Autorität der Autoren,
+- organisatorische Prozesse,
+- Einzelheiten zur Implementierung.
 
 ---
 
-## 2. Übersicht über die definierten Ebenen
+## 2. Geschlossener Satz von Dokumentationsebenen
 
-ODWS definiert die folgenden Dokumentationsebenen:
+ODWS definiert den folgenden **geschlossenen und umfassenden Satz** von Dokumentationsebenen:
 
 - „normativ“.
 - „beschreibend“.
-- „interpretativ“.
-- „rechnerisch“.
-- „Anleitung“.
+- „konzeptionell“.
+- „analytisch“.
+- „kontextbezogen“.
+- „verfahrenstechnisch“.
+- „Referenz“.
+- „Regierung“.
 
-Die Liste ist **offen für zukünftige Erweiterungen**,
-aber jede Ebene muss **explizit benannt und definiert** sein.
+**Andere Dokumentationsebenen sind nicht zulässig.**
 
----
-
-## 3. Normativ
-
-Die „normative“ Ebene:
-
-- definiert **was ODWS ist**
-- schafft **nicht verhandelbare Grundlagen**
-- setzt **Systemgrenzen**
-
-Normative Dokumente:
-- sind keine Beispiele
-- sind keine Empfehlungen
-- sind keine Erklärungen
-
-Sie dienen als **Referenzbasis** für alles andere.
+Jede Einführung einer neuen Ebene erfordert eine explizite Änderung dieses Dokuments.
 
 ---
 
-## 4. Beschreibend
+## 3. Normative Ebene
 
-Die „beschreibende“ Ebene:
+Die „normative“ Ebene definiert **was in ODWS wahr ist**.
 
-- beschreibt Realität, Kontext und Beobachtungen
-- erklärt **wie die Dinge in der Praxis existieren**
-- erfasst Erfahrung und Umgebung
+Es:
+- legt nicht verhandelbare Regeln fest,
+- definiert Systemgrenzen,
+- verwendet eine normative Sprache (MUSS, SOLL, DÜRFEN NICHT).
 
-Beschreibende Dokumente:
-- normative Definitionen nicht verändern
-- Gesetze nicht interpretieren
-- keine Berechnungen definieren
+Normative Dokumente sind die **Quelle der Wahrheit** für ODWS.
 
 ---
 
-## 5. Interpretativ
+## 4. Beschreibende Ebene
 
-Die „interpretative“ Ebene:
+Die „beschreibende“ Ebene erklärt und beschreibt die beobachtete Realität.
 
-- interpretiert normative und beschreibende Inhalte
-- beschreibt **mögliche Interpretationen**
-- präsentiert unterschiedliche Ansichten oder Regime
+Es:
+- liefert Erklärungen und Kontext,
+- beschreibt, wie es in der Praxis zugeht,
+- führt keine Regeln oder Verpflichtungen ein.
 
-Interpretationen:
-- sind unverbindlich
-- kann je nach Land, Organisation oder Team unterschiedlich sein
-- können sich widersprechen
-
-Interpretationskonflikt **ist kein Systemfehler**.
+Beschreibende Dokumente **ändern niemals normative Inhalte**.
 
 ---
 
-## 6. Rechnerisch
+## 5. Konzeptionelle Ebene
 
-Die „rechnerische“ Ebene:
+Die „konzeptionelle“ Ebene definiert mentale Modelle und Abstraktionen.
 
-- definiert **deterministische Berechnungsregeln**
-- spezifiziert Algorithmen, Transformationen und Logik
-- dient als Input für Implementierungen
-
-Rechenunterlagen:
-- Beurteilen Sie weder Rechtmäßigkeit noch Fairness
-- Die Realität nicht einschätzen
-- **nur aus definierten Eingaben berechnen**
+Es:
+- führt Konzepte und Terminologie ein,
+- erklärt, wie man über die Domain denkt,
+- unterstützt das Verständnis, ohne Verhalten vorzuschreiben.
 
 ---
 
-## 7. Anleitung
+## 6. Analytische Ebene
 
-Die Ebene „Führung“:
+Die „analytische“ Ebene untersucht Konsequenzen und Implikationen.
 
-- bietet Empfehlungen, Anweisungen und Beispiele
-- hilft Menschen, das System zu nutzen
-- berücksichtigt menschliche Faktoren
-
-Anleitung:
-- ist unverbindlich
-- verändert keine andere Ebene
-- kann ersetzt oder ignoriert werden
+Es:
+- analysiert die Auswirkungen von Regeln oder Entscheidungen,
+- untersucht Randfälle und Kompromisse,
+- definiert keine neuen Regeln.
 
 ---
 
-## 8. Trennung der Verantwortlichkeiten
+## 7. Kontextebene
 
-ODWS **trennt strikt**:
+Die „kontextuelle“ Ebene beschreibt die Umgebung, in der ODWS arbeitet.
 
-- Definition der Realität
-- Beschreibung der Realität
-- Interpretation
-- Berechnung
-- menschliche Führung
-
-Diese Trennung ist **absichtlich und schützend**.
+Es:
+- erfasst den rechtlichen, sozialen und betrieblichen Kontext,
+- erklärt äußere Zwänge,
+- ODWS-Regeln werden nicht neu interpretiert oder außer Kraft gesetzt.
 
 ---
 
-## 9. Normative Zusammenfassung
+## 8. Verfahrensebene
+
+Die „prozedurale“ Ebene beschreibt, **wie Dinge erledigt werden**.
+
+Es:
+- dokumentiert Arbeitsabläufe und Prozesse,
+- richtet sich in erster Linie an Betreuer,
+- ist nicht normativ und ersetzbar.
+
+---
+
+## 9. Referenzebene
+
+Die „Referenz“-Schicht stellt strukturiertes Nachschlagematerial bereit.
+
+Es:
+- enthält Definitionen, Zuordnungen und Zusammenfassungen,
+- ist für schnellen Zugriff optimiert,
+- führt keine Interpretation ein.
+
+---
+
+## 10. Governance-Ebene
+
+Die „Governance“-Ebene definiert die Projektverantwortung.
+
+Es:
+- beschreibt Entscheidungsprozesse,
+- definiert Wartungs- und Änderungsregeln,
+- gewährleistet die langfristige Kontinuität von ODWS.
+
+---
+
+## 11. Trennung und Disziplin
+
+ODWS-Dokumentationsebenen **DÜRFEN NICHT gemischt werden**.
+
+Die Schichtentrennung ist gewollt und schützt:
+- Realität von Autorität,
+- Berechnung aus Interpretation,
+- Bewahrer vor strukturellem Chaos.
+
+---
+
+## 12. Normative Zusammenfassung
 
 Im ODWS:
-
-- Ebenen definieren die Art von Aussagen
-- Jedes Dokument gehört zu genau einer Ebene
-- Schichten dürfen nicht gemischt werden
-- Konflikte zwischen Schichten sind Informationen, keine Mängel
-
-Dieses Modell schützt:
-- Realität von Autorität
-- Berechnung aus Interpretation
-- Menschen aus Systemen
+- der Satz der Dokumentationsebenen ist geschlossen,
+- jedes Dokument gehört zu genau einer Ebene,
+- Ebenen werden aus Gründen der Klarheit und nicht der Vollständigkeit definiert.
+- Strukturelle Einfachheit ist ein Designziel.

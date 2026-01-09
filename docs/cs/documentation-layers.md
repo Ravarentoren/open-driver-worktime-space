@@ -5,163 +5,176 @@
 <!--
 odws:
   layer: normative
-  scope: documentation-layers
+  domain: documentation
+  topic: documentation-layers
+  version: 2.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
 
 
 
+# Documentation Layers in ODWS (Normative Definition)
 
-# Dokumentační vrstvy v ODWS (Normativní definice)
+This document **normatively defines the complete and closed set of
+documentation layers** used within the **Open Driver Worktime Space (ODWS)**.
 
-Tento dokument **normálně definuje vrstvy dokumentace**, které se v něm používají
-**Open Driver Worktime Space (ODWS)**.
+Its purpose is to:
+- ensure long-term clarity and maintainability,
+- prevent uncontrolled growth of document categories,
+- keep the documentation navigable for future maintainers.
 
-Jeho účelem je:
-- jmenovat typy výpisů,
-- samostatné odpovědnosti,
-- zabránit míchání reality, interpretace a výpočtu.
-
-Tento dokument **nepředepisuje pracovní postupy**, nástroje ani role.
-Definuje pouze **povahu dokumentů**.
+This document defines **what kinds of documents may exist**.
+It does **not** prescribe tools, workflows, or authorship.
 
 ---
+
 
 ## 1. Princip vrstvy
 
-Každý dokument v ODWS **musí patřit přesně do jedné vrstvy**.
+Každý dokumentační soubor v ODWS **MUSÍ patřit přesně do jedné vrstvy**.
 
 Vrstva definuje:
-- typ prohlášení, které dokument obsahuje,
-- jak se to dá použít,
-- jeho vztah ke skutečnosti a výpočtu.
+- povaha prohlášení obsažených v dokumentu,
+- jak lze dokument použít,
+- jeho vztah ke skutečnosti, interpretace a výpočet.
 
 Vrstva **nedefinuje**:
-- autorství,
-- organizační využití,
-- správnost nebo úplnost.
+- korektnost nebo autorita autorů,
+- organizační procesy,
+- detaily implementace.
 
 ---
 
-## 2. Přehled definovaných vrstev
+## 2. Uzavřená sada vrstev dokumentace
 
-ODWS definuje následující vrstvy dokumentace:
+ODWS definuje následující **uzavřenou a vyčerpávající sadu** vrstev dokumentace:
 
 - "normativní".
 - "popisný".
-- "interpretační".
-- "výpočetní".
-- "návod".
+- "koncepční".
+- "analytický".
+- "kontextový".
+- "procedurální".
+- "odkaz".
+- "řízení".
 
-Seznam je **otevřený pro budoucí rozšíření**,
-ale každá vrstva musí být **výslovně pojmenována a definována**.
+**Žádné další vrstvy dokumentace nejsou povoleny.**
 
----
-
-## 3. Normativní
-
-"Normativní" vrstva:
-
-- definuje **co je ODWS**
-- zakládá **neobchodovatelné základy**
-- nastavuje **systémové hranice**
-
-Normativní dokumenty:
-- nejsou příklady
-- nejsou doporučení
-- nejsou vysvětlení
-
-Slouží jako **referenční základ** pro všechno ostatní.
+Jakékoli zavedení nové vrstvy **VYŽADUJE explicitní změnu tohoto dokumentu**.
 
 ---
 
-## 4. Popisný
+## 3. Normativní vrstva
 
-"Popisná" vrstva:
+,Normativní` vrstva definuje, **co je pravda v ODWS**.
 
-- popisuje realitu, kontext a pozorování
-- vysvětluje, **jak věci existují v praxi**
-- zachycuje zážitek a prostředí
+To:
+- stanoví nesmlouvavá pravidla,
+- definuje hranice systému,
+- používá normativní jazyk (MUSÍ, MUSÍ, NESMÍ).
 
-Popisné dokumenty:
-- nemodifikovat normativní definice
-- nevykládat právo
-- nedefinujte výpočty
+Normativní dokumenty jsou **zdrojem pravdy** pro ODWS.
 
 ---
 
-## 5. Interpretační
+## 4. Popisná vrstva
 
-"Interpretační" vrstva:
+„Popisná“ vrstva vysvětluje a popisuje realitu tak, jak byla pozorována.
 
-- interpretuje normativní a popisný obsah
-- popisuje **možné interpretace**
-- prezentuje odlišné názory nebo režimy
+To:
+- poskytuje vysvětlení a souvislosti,
+- popisuje, jak věci existují v praxi,
+- nezavádí pravidla ani povinnosti.
 
-Výklady:
-- nejsou závazné
-- mohou se lišit v různých zemích, organizacích nebo týmech
-- mohou si odporovat
-
-Interpretační konflikt **není systémová chyba**.
+Popisné dokumenty **nikdy neupravujte normativní obsah**.
 
 ---
 
-## 6. Výpočetní
+## 5. Koncepční vrstva
 
-"Výpočetní" vrstva:
+„Konceptuální“ vrstva definuje mentální modely a abstrakce.
 
-- definuje **deterministická výpočetní pravidla**
-- specifikuje algoritmy, transformace a logiku
-- slouží jako vstup pro implementace
-
-Výpočtové dokumenty:
-- neposuzujte zákonnost nebo spravedlnost
-- nehodnotit realitu
-- **počítat pouze z definovaných vstupů**
+To:
+- seznamuje s pojmy a terminologií,
+- vysvětluje, jak přemýšlet o doméně,
+- podporuje porozumění bez předepisování chování.
 
 ---
 
-## 7. Pokyny
+## 6. Analytická vrstva
 
-Vrstva "navádění":
+„Analytická“ vrstva zkoumá důsledky a implikace.
 
-- poskytuje doporučení, návody a příklady
-- pomáhá lidem používat systém
-- zohledňuje lidský faktor
-
-Vedení:
-- je nezávazné
-- nemění žádnou další vrstvu
-- mohou být nahrazeny nebo ignorovány
+To:
+- analyzuje dopady pravidel nebo rozhodnutí,
+- zkoumá okrajové případy a kompromisy,
+- nedefinuje nová pravidla.
 
 ---
 
-## 8. Rozdělení odpovědností
+## 7. Kontextová vrstva
 
-ODWS **přísně odděluje**:
+„Kontextová“ vrstva popisuje prostředí, ve kterém ODWS funguje.
 
-- definice reality
-- popis reality
-- výklad
-- počítání
-- lidské vedení
-
-Toto oddělení je **záměrné a ochranné**.
+To:
+- zachycuje právní, sociální a provozní kontext,
+- vysvětluje vnější omezení,
+- nereinterpretuje ani nepřepisuje pravidla ODWS.
 
 ---
 
-## 9. Normativní shrnutí
+## 8. Procedurální vrstva
+
+„Procedurální“ vrstva popisuje, **jak se věci dělají**.
+
+To:
+- dokumentuje pracovní postupy a procesy,
+- je primárně určen pro správce,
+- je nenormativní a nahraditelný.
+
+---
+
+## 9. Referenční vrstva
+
+"Referenční" vrstva poskytuje strukturovaný vyhledávací materiál.
+
+To:
+- obsahuje definice, mapování a shrnutí,
+- je optimalizován pro rychlý přístup,
+- nezavádí výklad.
+
+---
+
+## 10. Vrstva správy
+
+Vrstva `governance` definuje správu projektu.
+
+To:
+- popisuje rozhodovací procesy,
+- definuje pravidla údržby a změn,
+- zajišťuje dlouhodobou kontinuitu ODWS.
+
+---
+
+## 11. Separace a disciplína
+
+Vrstvy dokumentace ODWS **NESMÍ být smíchány**.
+
+Oddělení vrstev je záměrné a chrání:
+- realita od autority,
+- výpočet z výkladu,
+- udržovatelé ze strukturálního chaosu.
+
+---
+
+## 12. Normativní shrnutí
 
 V ODWS:
-
-- vrstvy definují povahu příkazů
-- každý dokument patří přesně do jedné vrstvy
-- vrstvy se nesmí míchat
-- konflikty mezi vrstvami jsou informace, nikoli vady
-
-Tento model chrání:
-- realita od autority
-- výpočet z výkladu
-- lidé ze systémů
+- sada vrstev dokumentace je uzavřena,
+- každý dokument patří přesně do jedné vrstvy,
+- vrstvy jsou definovány pro jasnost, nikoli úplnost,
+- konstrukční jednoduchost je cílem návrhu.
