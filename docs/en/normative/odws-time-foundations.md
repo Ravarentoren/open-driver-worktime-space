@@ -1,4 +1,4 @@
----
+<!--
 odws:
   layer: normative
   domain: worktime
@@ -11,7 +11,7 @@ odws:
   relates-to:
     - EPDŘ v1.0.0
     - ODWS core principles
----
+-->
 
 # ODWS Normative Position  
 ## On Worktime Funds and Temporal Reality
