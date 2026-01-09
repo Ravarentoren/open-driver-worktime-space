@@ -236,3 +236,30 @@ bash:
 ./scripts/check_odws_layers.sh
 
 ---
+
+## 📊 EPDŘ – Driver Worktime Records (Reference spreadsheet)
+
+EPDŘ is a reference spreadsheet for recording professional drivers’ working time.
+ 
+It serves as a deterministic and auditable technical input for payroll calculations, compliant with Act No. 262/2006 Coll. (Czech Labour Code).
+ 
+The spreadsheet implements precise time calculation logic covering:
+ 
+- working time,
+- overtime,
+- night work,
+- weekends,
+- public holidays.
+ 
+It is designed for maximum cross-compatibility across spreadsheet applications
+(LibreOffice / Collabora Office / Microsoft Excel / Google Sheets).
+
+
+### 🔗 Stable release for download (XLSX):
+
+https://github.com/Ravarentoren/open-driver-worktime-space/releases/tag/epdr-v1.0.0
+
+
+Licensed under the Apache License, Version 2.0.
+
+---
