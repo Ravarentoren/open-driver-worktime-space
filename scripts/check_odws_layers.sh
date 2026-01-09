@@ -1,113 +1,101 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# ============================
-# CONFIG
-# ============================
+# ============================================================
+# ODWS Documentation Layer Checker & Organizer
+# ============================================================
 
 DOCS_DIR="docs/en"
 
 VALID_LAYERS=(
   normative
   descriptive
-  interpretative
-  computational
-  guidance
+  conceptual
+  analytical
+  contextual
+  procedural
+  reference
+  governance
 )
 
-# ============================
-# STATE
-# ============================
+DEBUG="${DEBUG:-false}"
+FIX="${FIX:-false}"
 
-declare -A by_layer
-missing=()
-invalid=()
-
-for layer in "${VALID_LAYERS[@]}"; do
-  by_layer["$layer"]=""
-done
-
-# ============================
-# HEADER
-# ============================
+debug() {
+  [[ "$DEBUG" == "true" ]] && echo "[DEBUG] $*"
+}
 
 echo "🔍 ODWS Documentation Layer Check"
 echo "================================"
 echo "Directory: $DOCS_DIR"
+echo "Fix mode:  $FIX"
 echo
 
-# ============================
-# PROCESS FILES
-# ============================
+errors=0
 
-for file in "$DOCS_DIR"/*.md; do
-  filename="$(basename "$file")"
+# ------------------------------------------------------------
+# Process files
+# ------------------------------------------------------------
 
+while IFS= read -r file; do
+  rel="${file#$DOCS_DIR/}"
+  dir="$(dirname "$rel")"
+  base="$(basename "$file")"
+
+  # Extract layer from HTML comment metadata
   layer="$(awk '
     /<!--/ {inblock=1}
-    inblock && /layer:/ {print $2; exit}
+    inblock && /^[[:space:]]*layer:[[:space:]]*/ {
+      gsub(/^[[:space:]]*layer:[[:space:]]*/, "", $0)
+      print $0
+      exit
+    }
     /-->/ {inblock=0}
   ' "$file")"
 
-  if [[ -z "${layer:-}" ]]; then
-    missing+=("$filename")
+  if [[ -z "$layer" ]]; then
+    echo "⚠️  Missing layer metadata: $rel"
+    errors=$((errors+1))
     continue
   fi
 
   valid=false
   for v in "${VALID_LAYERS[@]}"; do
-    if [[ "$layer" == "$v" ]]; then
-      valid=true
-      by_layer["$v"]+="$filename"$'\n'
-      break
+    [[ "$layer" == "$v" ]] && valid=true
+  done
+
+  if [[ "$valid" != "true" ]]; then
+    echo "❌ Invalid layer '$layer' in $rel"
+    errors=$((errors+1))
+    continue
+  fi
+
+  expected_dir="$layer"
+
+  if [[ "$dir" != "$expected_dir" ]]; then
+    echo "📂 Misplaced document:"
+    echo "   File:  $rel"
+    echo "   Layer: $layer"
+    echo "   Should be in: docs/en/$expected_dir/"
+
+    if [[ "$FIX" == "true" ]]; then
+      mkdir -p "$DOCS_DIR/$expected_dir"
+      git mv "$file" "$DOCS_DIR/$expected_dir/$base"
+      echo "   ✔ Moved"
+    else
+      echo "   ℹ Run with FIX=true to auto-move"
+      errors=$((errors+1))
     fi
-  done
-
-  if [[ "$valid" == false ]]; then
-    invalid+=("$filename ($layer)")
-  fi
-done
-
-# ============================
-# REPORT
-# ============================
-
-for layer in "${VALID_LAYERS[@]}"; do
-  echo "📄 $layer documents:"
-  if [[ -n "${by_layer[$layer]}" ]]; then
-    while read -r f; do
-      [[ -n "$f" ]] && echo "  - $f"
-    done <<< "${by_layer[$layer]}"
   else
-    echo "  (none)"
+    debug "OK: $rel"
   fi
-  echo
-done
+done < <(find "$DOCS_DIR" -type f -name "*.md")
 
-if (( ${#missing[@]} > 0 )); then
-  echo "⚠️  Documents missing metadata:"
-  for f in "${missing[@]}"; do
-    echo "  - $f"
-  done
-  echo
-fi
-
-if (( ${#invalid[@]} > 0 )); then
-  echo "❌ Documents with invalid layer value:"
-  for f in "${invalid[@]}"; do
-    echo "  - $f"
-  done
-  echo
-fi
-
-# ============================
-# EXIT STATUS
-# ============================
-
-if (( ${#missing[@]} > 0 || ${#invalid[@]} > 0 )); then
-  echo "❌ Layer check FAILED"
+echo
+if [[ "$errors" -gt 0 ]]; then
+  echo "❌ Layer check completed with issues"
   exit 1
 else
-  echo "✅ All documents have valid ODWS layers"
+  echo "✅ All documents are correctly layered"
   exit 0
 fi
