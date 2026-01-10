@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: operational-context
+  topic: operational-realities
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Operational Realities of Driver Worktime Recording

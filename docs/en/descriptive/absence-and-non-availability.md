@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: worktime
+  topic: absence-and-non-availability
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Absence and Non-Availability Recording

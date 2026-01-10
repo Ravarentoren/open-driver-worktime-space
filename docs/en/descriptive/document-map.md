@@ -1,13 +1,17 @@
 <!--
 odws:
   layer: descriptive
+  domain: documentation
+  topic: document-map
+  version: 1.0
+  status: foundational
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
+
 
 # ODWS Document Map
 ## Canonical Structure of ODWS Documentation

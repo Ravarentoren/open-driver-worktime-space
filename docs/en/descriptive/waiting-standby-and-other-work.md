@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: worktime
+  topic: waiting-standby-and-other-work
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: normative
--->
+
 
 
 # Waiting, Standby, and “Other Work”

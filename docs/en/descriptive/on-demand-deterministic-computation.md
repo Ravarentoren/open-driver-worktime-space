@@ -1,12 +1,12 @@
 <!--
 odws:
   layer: descriptive
--->
-
-
-<!--
-odws:
-  layer: descriptive
+  domain: worktime
+  topic: on-demand-deterministic-computation
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 

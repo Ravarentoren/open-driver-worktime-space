@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: regulation
+  topic: regulatory-regimes
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Regulatory Regimes and Applicability Context

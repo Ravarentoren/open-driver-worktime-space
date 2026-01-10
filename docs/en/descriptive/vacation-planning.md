@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: worktime
+  topic: vacation-planning-intent
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Vacation Planning and Intent

@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: data-model
+  topic: workday
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: normative
--->
+
 
 
 # Driver Workday – Core Data Model (Workday)

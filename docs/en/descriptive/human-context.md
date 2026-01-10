@@ -1,13 +1,16 @@
 <!--
 odws:
   layer: descriptive
+  domain: human-context
+  topic: human-and-local-context
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Human and Local Context Principles
