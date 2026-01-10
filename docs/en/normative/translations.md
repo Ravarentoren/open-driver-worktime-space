@@ -1,6 +1,12 @@
 <!--
 odws:
   layer: normative
+  domain: documentation
+  topic: translations-and-authority
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 

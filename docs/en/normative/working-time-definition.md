@@ -1,13 +1,16 @@
 <!--
 odws:
-  layer: descriptive
--->
-
-
-<!--
-odws:
   layer: normative
+  domain: worktime
+  topic: working-time-definition
+  version: 1.0
+  status: foundational
+  language: en
+  license: Apache-2.0
 -->
+
+
+
 
 
 # Definition of Working Time of a Professional Driver

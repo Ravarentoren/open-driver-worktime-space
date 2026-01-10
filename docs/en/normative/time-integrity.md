@@ -1,13 +1,17 @@
 <!--
 odws:
-  layer: descriptive
--->
-
-
-<!--
-odws:
   layer: normative
+  domain: time
+  topic: time-integrity
+  version: 1.0
+  status: foundational
+  language: en
+  license: Apache-2.0
 -->
+
+
+
+
 
 # Integrity of Working Time, Rest Time, and Vacation
 ## Normative Definition of Time Reality within ODWS

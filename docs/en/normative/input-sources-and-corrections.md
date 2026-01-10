@@ -1,13 +1,16 @@
 <!--
 odws:
-  layer: descriptive
+  layer: normative
+  domain: worktime
+  topic: input-sources-and-corrections
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Input Sources and Corrections

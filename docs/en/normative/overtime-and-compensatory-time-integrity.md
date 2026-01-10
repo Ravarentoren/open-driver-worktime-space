@@ -1,13 +1,17 @@
 <!--
 odws:
-  layer: descriptive
--->
-
-
-<!--
-odws:
   layer: normative
+  domain: worktime
+  topic: overtime-and-compensatory-time-integrity
+  version: 1.0
+  status: foundational
+  language: en
+  license: Apache-2.0
 -->
+
+
+
+
 
 # Integrity of Overtime Work and Compensatory Time
 ## Normative Protection of Work Reality within ODWS

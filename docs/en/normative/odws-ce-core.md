@@ -1,8 +1,16 @@
 <!--
 odws:
   layer: normative
-  scope: odws-ce-core
+  domain: computation
+  topic: odws-ce-core-definition
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
+
+
+
 
 # ODWS-CE Core – Normative Definition of the Technical Core
 

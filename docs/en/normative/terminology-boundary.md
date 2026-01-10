@@ -1,7 +1,12 @@
 <!--
 odws:
   layer: normative
-  scope: terminology-boundary
+  domain: terminology
+  topic: terminology-boundaries
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 

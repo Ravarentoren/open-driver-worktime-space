@@ -1,13 +1,16 @@
 <!--
 odws:
-  layer: descriptive
+  layer: normative
+  domain: worktime
+  topic: employment-termination-computation
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Employment Termination – Deterministic Computation

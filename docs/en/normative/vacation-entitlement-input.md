@@ -1,13 +1,16 @@
 <!--
 odws:
-  layer: descriptive
+  layer: normative
+  domain: worktime
+  topic: vacation-entitlement-inputs
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
 -->
 
 
-<!--
-odws:
-  layer: descriptive
--->
+
 
 
 # Vacation Entitlement – Input Facts
