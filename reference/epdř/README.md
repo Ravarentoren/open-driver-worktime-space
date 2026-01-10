@@ -1,16 +1,34 @@
-# 📊 EPDŘ – Czech Driver Worktime Reference (v1.0.0)
+# 📊 EPDŘ – Czech Driver Worktime Reference
 
-This directory contains **EPDŘ reference data**, released as part of the  
-`epdr-v1.0.0` release.
+## 📌 Data version: **v1.0.0**  
+## 🏷️ Release version: **v1.0.1**
+
+This directory contains **EPDŘ reference data**, published as a versioned
+and immutable reference artifact.
 
 ---
 
-## 📌 What this is
+## 📦 Versioning model (important)
 
-- 📘 Reference spreadsheet for **Czech driver worktime records**
+- **EPDŘ v1.0.0**  
+  → defines the **actual reference data** (spreadsheet content)
+
+- **EPDŘ v1.0.1**  
+  → is a **packaging & repository release**  
+  → relocation to `reference/epdř/`  
+  → README documentation added  
+  → **NO changes to the underlying data**
+
+📌 The spreadsheet content in v1.0.1 is **identical** to v1.0.0.
+
+---
+
+## 📘 What this is
+
+- 📊 Reference spreadsheet for **Czech driver worktime records**
 - ⚖️ Legal context: **Czech Labour Code (Act No. 262/2006 Coll.)**
-- 🔗 Used as an **external reference input** for ODWS-compatible systems
-- 🧮 Intended as **data / reference material**, not a specification
+- 🔗 Intended as **external reference input** for ODWS-compatible systems
+- 🧮 Stable, immutable **data reference**, not a specification
 
 ---
 
@@ -19,41 +37,45 @@ This directory contains **EPDŘ reference data**, released as part of the
 - ❌ Not ODWS normative documentation
 - ❌ Not translated documentation
 - ❌ Not part of the ODWS core specification
-- ❌ Not a regulatory or legal interpretation text
+- ❌ Not a legal interpretation or regulatory guideline
 
 ---
 
-## 📦 EPDŘ Reference v1.0.0
+## 📥 Download (immutable tag)
 
-This reference table is released as a **stable, immutable artifact**.
+The reference table can be downloaded directly from the tagged release:
 
-📥 **Download (tagged release):**  
-https://github.com/Ravarentoren/open-driver-worktime-space/blob/epdr-v1.0.0/reference/epdř/EPDŘ/EPDŘ_reference_v1.0.0.xlsx
+🔗 **EPDŘ reference data v1.0.0 (via release v1.0.1):**  
+https://github.com/Ravarentoren/open-driver-worktime-space/blob/epdr-v1.0.1/reference/epdř/EPDŘ/EPDŘ_reference_v1.0.0.xlsx
 
-🔒 This link always points to the immutable `epdr-v1.0.0` tag.
+🔒 This link points to an **immutable Git tag** and will never change.
 
 ---
 
-## 🗄️ Archival note
+## 🗄️ Archival & future versions
 
-This material is kept for **historical, audit, and reference purposes**.  
-Future versions, if any, will be released under new versioned tags  
-(e.g. `epdr-v1.0.1`).
+This material is kept for **historical, audit, and reference purposes**.
+
+If future updates to the reference data occur, they will be released as:
+
+- `epdr-v1.1.0`, `epdr-v2.0.0`, … (data changes)
+- possible `.x` releases for packaging or documentation only
 
 ---
 
 ## 🧭 Relationship to ODWS
 
-EPDŘ is an **external reference dataset**.
+EPDŘ is an **external jurisdiction-specific reference dataset**.
 
-- ODWS defines **structure, rules, and semantics**
-- EPDŘ provides **localized reference values**
-- ODWS remains **jurisdiction-agnostic**
-- EPDŘ remains **ODWS-independent**
+- 🧠 **ODWS** defines structure, semantics, and rules
+- 📊 **EPDŘ** provides localized reference values
+- 🌍 ODWS remains **jurisdiction-agnostic**
+- 📁 EPDŘ remains **ODWS-independent**
 
 ---
 
-🧠 **Design principle:**  
-> _Reference data must never redefine normative truth._
+### 🧠 Design principle
+
+> **Reference data must never redefine normative truth.**
 
 ---
