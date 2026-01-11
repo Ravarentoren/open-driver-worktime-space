@@ -1,22 +1,22 @@
 # 📊 EPDŘ – Czech Driver Worktime Reference
 
-## 📌 Data version: **v1.0.0**  
+## 📌 Data version: **v1.0.0**
 ## 🏷️ Release version: **v1.0.1**
 
 This directory contains **EPDŘ reference data**, published as a versioned
-and immutable reference artifact.
+and immutable **external reference artifact**.
 
 ---
 
 ## 📦 Versioning model (important)
 
-- **EPDŘ v1.0.0**  
+- **EPDŘ v1.0.0**
   → defines the **actual reference data** (spreadsheet content)
 
-- **EPDŘ v1.0.1**  
-  → is a **packaging & repository release**  
-  → relocation to `reference/epdř/`  
-  → README documentation added  
+- **EPDŘ v1.0.1**
+  → is a **packaging & repository release**
+  → relocation to `reference/epdř/`
+  → README documentation added
   → **NO changes to the underlying data**
 
 📌 The spreadsheet content in v1.0.1 is **identical** to v1.0.0.
@@ -38,6 +38,7 @@ and immutable reference artifact.
 - ❌ Not translated documentation
 - ❌ Not part of the ODWS core specification
 - ❌ Not a legal interpretation or regulatory guideline
+- ❌ Not a source of normative truth for ODWS
 
 ---
 
@@ -49,6 +50,22 @@ The reference table can be downloaded directly from the tagged release:
 https://github.com/Ravarentoren/open-driver-worktime-space/blob/epdr-v1.0.1/reference/epdř/EPDŘ/EPDŘ_reference_v1.0.0.xlsx
 
 🔒 This link points to an **immutable Git tag** and will never change.
+
+---
+
+## 📜 Normative context (ODWS)
+
+This reference artifact is governed by the ODWS normative rule:
+
+📘 **External Reference Artifacts in ODWS (Normative Definition)**  
+https://github.com/Ravarentoren/open-driver-worktime-space/blob/main/docs/en/normative/external-reference-artifacts.md
+
+According to this rule:
+
+- External reference artifacts are **always outside ODWS**
+- They **may be used as input or guidance**
+- They **never define what is true in ODWS**
+- They **cannot modify or override recorded reality**
 
 ---
 
@@ -67,15 +84,31 @@ If future updates to the reference data occur, they will be released as:
 
 EPDŘ is an **external jurisdiction-specific reference dataset**.
 
-- 🧠 **ODWS** defines structure, semantics, and rules
+- 🧠 **ODWS** defines structure, semantics, and normative rules
 - 📊 **EPDŘ** provides localized reference values
 - 🌍 ODWS remains **jurisdiction-agnostic**
 - 📁 EPDŘ remains **ODWS-independent**
 
 ---
 
-### 🧠 Design principle
+### 🌍 Reality and authority
 
-> **Reference data must never redefine normative truth.**
+**ODWS can never stand above reality.**
+
+🧠 Truth carries authority by its own existence.  
+🌱 Reality does not require sovereignty, validation, or permission.
+
+🚫 ODWS does not define truth.  
+🚫 ODWS does not legitimize reality.
+
+🧭 ODWS exists solely to:
+- 📝 record what actually occurred,
+- 🕒 preserve factual and temporal integrity,
+- 🛡️ prevent reality from being replaced by computation,
+  interpretation, or administrative constructs.
 
 ---
+
+### 🧠 Design principle
+
+> **Reference data must never redefine normative reality.**
