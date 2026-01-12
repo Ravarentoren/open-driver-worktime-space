@@ -1,0 +1,175 @@
+<!--
+odws:
+  layer: normative
+  domain: input
+  topic: identity-of-the-means
+  version: 1.0
+  status: stable
+  language: en
+  license: Apache-2.0
+-->
+
+# Identity of the Means
+## Normative Definition of Means of Movement in ODWS
+
+This document **normatively defines the identity of the means**
+used for movement or transport within the Open Driver Worktime Space (ODWS).
+
+Its purpose is to:
+- prevent conflation of means with vehicles, devices, or legal categories,
+- establish a stable reality-based model of movement,
+- protect the ODWS-CE core from technical and administrative assumptions.
+
+This document is **normative**.
+
+It applies in conjunction with:
+- *ODWS Documentation Layers*
+- *ODWS-CE Core – Normative Definition*
+- *Physical and Technical Limits of Recording Devices*
+- *Identity of the Driver*
+- *ODWS Terminology Boundary*
+
+---
+
+## 1. Means as a Reality Concept
+
+Normatively:
+
+- a **means** is a real carrier of movement or displacement
+- a means exists **only in relation to real movement**
+- a means is defined by **what happens in reality**, not by classification
+
+The means is part of **reality**, not of interpretation.
+
+---
+
+## 2. Prohibition of Identity Substitution
+
+The following substitutions are **normatively prohibited** in ODWS:
+
+- **means ≠ vehicle**
+- **means ≠ tachograph**
+- **means ≠ technical configuration**
+- **means ≠ legal transport category**
+- **means ≠ employer or organization**
+- **means ≠ system object or role**
+
+Any system behavior relying on such substitution is **invalid in ODWS**.
+
+---
+
+## 3. Means ≠ Vehicle
+
+Normatively:
+
+- a vehicle is a **technical object**
+- a means is a **reality role**
+- a vehicle MAY be a means
+- a means MAY exist without any vehicle
+
+Therefore:
+
+- movement does not require a vehicle
+- absence of a vehicle does not negate movement
+- vehicle identity MUST NOT be used as a proxy for means identity
+
+---
+
+## 4. Means ≠ Tachograph
+
+Normatively:
+
+- a tachograph is a **vehicle-bound recording device**
+- a tachograph records **only within a specific technical configuration**
+- a tachograph does not define the means
+
+Therefore:
+
+- a means may exist without any tachograph
+- a tachograph may record only a subset of movement
+- absence of tachograph data is **not absence of movement**
+
+---
+
+## 5. Change of Means Over Time
+
+Normatively:
+
+- the means MAY change over time
+- changes of means are part of reality
+- no continuity of means is assumed or required
+
+Examples (non-exhaustive):
+- transition between vehicles
+- multimodal transport
+- movement without any technical carrier
+- temporary absence of any means
+
+The ODWS-CE core:
+- MUST allow changes of means
+- MUST NOT enforce artificial continuity
+
+---
+
+## 6. Means Without Mechanical Transport
+
+Normatively:
+
+- a means MAY be non-mechanical
+- a means MAY be purely human
+- a means MAY be absent
+
+Movement:
+- on foot
+- during transfers
+- during waiting or escorting
+
+is **valid reality** and MUST NOT be excluded.
+
+---
+
+## 7. Relation Between Driver and Means
+
+Normatively:
+
+- the driver is **not identical to the means**
+- the driver MAY:
+  - use a means,
+  - accompany a means,
+  - be temporarily without a means
+- driver identity and means identity are **independent**
+
+The ODWS-CE core:
+- MUST track driver reality independently of means
+- MUST allow driver continuity across changing means
+
+---
+
+## 8. Relation to ODWS-CE Core
+
+The ODWS-CE core:
+
+- accepts means as a **reality attribute**
+- does not derive meaning from means type
+- does not interpret legality or classification
+- preserves movement continuity regardless of means
+
+Means are **inputs**, not authorities.
+
+---
+
+## 9. Normative Summary
+
+In ODWS:
+
+- a means is a carrier of real movement
+- means identity is not a technical or legal label
+- means may change or be absent
+- devices and vehicles do not define movement
+- reality precedes classification
+
+If a system assumes a means that did not exist,
+**the system is wrong**.
+
+If movement occurred without a means,
+**ODWS preserves it**.
