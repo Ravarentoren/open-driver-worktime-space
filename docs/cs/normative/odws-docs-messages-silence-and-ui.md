@@ -60,7 +60,7 @@ Ticho je platný výstup systému pouze tehdy, pokud:
 Typ a význam
 
 - SILENCE_WORKING  
-  Probíhá práce a uživatel o tom ví
+  Probíhá práce a uživatel o tom byl informován
 
 - SILENCE_FINAL  
   Proces byl úspěšně dokončen
@@ -127,7 +127,11 @@ Klíč a význam
   Systém byl úspěšně dokončen
 
 - TXT_SYS_ABORTED_BY_USER  
-  Operace byla zrušena uživatelem
+  Operace byla ukončena uživatelem (systémová úroveň)
+
+  Oznamuje, že běžící proces nebo operace byla ukončena systémem na základě zásahu uživatele (např. signál, ukončení běhu, přerušení vstupu).
+
+  Tato hláška popisuje stav procesu, nikoli konkrétní UI akci.
 
 - TXT_SYS_INTERRUPTED  
   Proces byl přerušen
@@ -323,7 +327,7 @@ Klíč a význam
   Pracuji. Ještě nejsem hotový.
 
 - TXT_ABORTED_BY_USER  
-  Zrušeno uživatelem
+  Zastaralé (deprecated)
 
 - TXT_NOTHING_TO_DO  
   Není co dělat
@@ -333,6 +337,13 @@ Klíč a význam
 
 - TXT_WAITING_FOR_INPUT  
   Čekám na vstup
+
+- TXT_UI_ABORTED_BY_USER  
+  Zrušeno uživatelem (UI akce)
+
+  Oznamuje, že uživatel vědomě zrušil operaci prostřednictvím uživatelského rozhraní (např. volbou „Zrušit“, návratem zpět nebo odmítnutím potvrzení).
+
+  Tato hláška popisuje úmyslnou UI akci uživatele.
 
 
 ## 14. Závěrečný princip
