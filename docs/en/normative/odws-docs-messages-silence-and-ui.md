@@ -127,7 +127,11 @@ Key and Meaning
   System finished successfully
   
 - TXT_SYS_ABORTED_BY_USER
-  Operation aborted by user
+  Operation aborted by user (system-level)
+
+  Indicates that the running process or operation was terminated by the system as a result of user intervention (e.g. signal, execution termination, input interruption).
+
+  This message describes a process state, not a specific UI action.
   
 - TXT_SYS_INTERRUPTED
   Process interrupted
@@ -323,7 +327,7 @@ Key and Meaning
   Working. Not finished yet.
   
 - TXT_ABORTED_BY_USER
-  Aborted by user
+  Deprecated
 
 - TXT_NOTHING_TO_DO
   Nothing to do
@@ -333,6 +337,13 @@ Key and Meaning
 
 - TXT_WAITING_FOR_INPUT
   Waiting for input
+
+- TXT_UI_ABORTED_BY_USER
+  Aborted by user (UI action)
+
+  Indicates that the user intentionally cancelled an operation via the user interface (e.g. selecting “Cancel”, navigating back, or declining a confirmation).
+
+  This message describes an intentional UI action by the user.
 
 
 ## 14. Final Principle
