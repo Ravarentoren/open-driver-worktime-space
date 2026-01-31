@@ -5,22 +5,44 @@
 
 ---
 
-## 🎯 Účel dokumentu
+## 🧭 Pro koho je tato tabulka určena
 
 EPDŘ (Evidence pracovní doby řidiče) je **referenční tabulka**
-určená k:
+určená především:
 
-- 📋 osobní evidenci pracovní doby řidiče
+- 🚛 **profesionálním řidičům**
 
-- 🧮 výpočtům pracovní doby, noční práce, víkendů a svátků
+- 🤝 **zaměstnavatelům, kteří chtějí jednat férově**
 
-- 🔍 kontrole souladu s pracovněprávními předpisy
+- 🧾 pro osobní, kontrolní a srovnávací evidenci pracovní doby
 
-Tento soubor je navržen **z pohledu zaměstnance**.
+Tabulka je navržena **z pohledu zaměstnance** a má pomoci **rozumět vlastní pracovní době**, nikoliv ji zkreslovat.
+
+---
+
+## 🎯 K čemu tabulka slouží
+
+EPDŘ umožňuje:
+
+- 📋 evidovat skutečně odpracovanou dobu
+- 🧮 vypočítat:
+  - pracovní dobu v kalendářním dni
+  - noční práci
+  - práci o víkendech
+  - práci ve státní svátky
+  - práci přesčas
+
+- 🔍 kontrolovat logickou a časovou návaznost údajů
+
+- ⚠️ odhalit nesrovnalosti ve výkazech
+
+Slouží jako **referenční a kontrolní nástroj**, nikoliv jako nástroj moci.
 
 ---
 
 ## ⚖️ Právní rámec
+
+Tabulka vychází z následujících předpisů:
 
 - 🇨🇿 zákon č. **262/2006 Sb.** (zákoník práce)
 
@@ -28,61 +50,97 @@ Tento soubor je navržen **z pohledu zaměstnance**.
 
 - AETR (tam, kde se uplatňuje)
 
-  **V aktuálních a platných zněních.**
+> Vždy v **aktuálních a platných zněních**.
+
 ---
 
-## 🧠 Základní principy návrhu
+## 🧠 Zásady návrhu
 
-- ✔ bez maker a skriptů
+- ✔ žádná makra
 
-- ✔ deterministické chování
+- ✔ žádné skripty
 
-- ✔ kompatibilita napříč:
-  - LibreOffice
-  - Excel
+- ✔ deterministické vzorce
+
+- ✔ kompatibilita:
+  - Collabora Office
+  - Libre Office
+  - Microsoft Excel
   - OnlyOffice
 
 - ✔ oddělení:
-  - vizuální části
-  - výpočetní logiky
+  - vizuální část (ruční vstupy)
+  - výpočetní logika
   - auditní vrstvy
+
+Výsledkem je tabulka, která:
+- se chová předvídatelně
+- je čitelná
+- je kontrolovatelná
 
 ---
 
-## 🔐 Integrita a důkazní stopa
+## 🔐 Integrita a důvěryhodnost
 
-Každá vydaná verze tabulky:
-
-- je **neměnný artefakt**
-
-- má přiřazen **SHA-256 kontrolní otisk**
+Tato tabulka je vydávána jako **neměnný referenční artefakt**.
 
 - je publikována pod **Git tagem**
 
-> **Pokud kontrolní otisk nesouhlasí, soubor byl změněn a není považován za důvěryhodný.**
+- má přiřazen **SHA-256 kontrolní otisk**
+
+- otisk je uveden **pouze v README.md**
+
+> **Kontrolní otisk nechrání proti lidské nepoctivosti. Slouží k ověření, že zveřejněný soubor nebyl změněn mimo tento repozitář.**
 
 ---
 
-## 🚫 Omezení
+## 🚫 Důležitá omezení
 
 Tato tabulka:
 
 - ❌ nenahrazuje tachograf
 - ❌ není mzdový software
 - ❌ není právní interpretací
-- ❌ nemůže nahradit reálné záznamy
+- ❌ nemůže nahradit skutečné záznamy
 
-Slouží výhradně jako **referenční a kontrolní nástroj**.
+Neřeší sankce, pokuty ani hodnocení řidiče.
+Slouží výhradně k **evidenci a kontrole reality**.
 
 ---
 
 ## 🧭 Vztah k ODWS
 
-- 🧠 **ODWS** definuje pravidla, strukturu a normativní rámec
+- 🧠 **ODWS** definuje strukturu a normativní rámec
 
 - 📊 **EPDŘ** je externí referenční artefakt
 
 - 📁 EPDŘ **není součástí ODWS core**
+
+- 📘 žádný software nemůže přepsat realitu
+
+---
+
+## 📦 Distribuce
+
+### Git tag (neměnný stav)
+
+https://github.com/Ravarentoren/open-driver-worktime-space/tree/epdr-v2.0.0
+
+### Přímý odkaz ke stažení tabulky
+
+https://raw.githubusercontent.com/Ravarentoren/open-driver-worktime-space/epdr-v2.0.0/reference/epdř/v2.0.0/EPDŘ_reference_ODWS_v2.0.0.xlsx
+
+---
+
+## 🔐 Kontrolní otisk (SHA-256)
+
+ece4c885e8b03f56d254a57fdb5b4973dcffbd4a49068e2c66267ff986abae3b
+
+Otisk byl vypočten nad souborem:
+
+EPDŘ_reference_ODWS_v2.0.0.xlsx
+
+Jakákoliv změna souboru vede ke změně tohoto otisku.
 
 ---
 
@@ -92,16 +150,11 @@ Apache License 2.0
 
 ---
 
-## 🌍 Filosofická poznámka
+## 🌍 Závěrečná poznámka
 
-> **Realita má přednost před záznamem.** 
+> **Realita má přednost před záznamem.**
+> Tato tabulka nemá za cíl nikoho trestat.
 
-> **Žádná tabulka nemůže přepsat skutečnost,pouze ji zaznamenat.**
-
----
-
-## 🔐 Kontrolní otisk (SHA-256)
-
-1a6bd9678a595909c2510405bfeebb619d5b0c389c5317e218766d4288b5da4e
+> Má pouze pomoci zaznamenat to, co se skutečně stalo.
 
 ---
