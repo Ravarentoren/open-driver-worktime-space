@@ -1,3 +1,12 @@
+⚠️ DEPRECATED – NEPOUŽÍVAT
+
+Soubor `EPDŘ_reference_v1.0.0.xlsx` je raný vizuální prototyp.
+Neobsahuje kompletní výpočetní logiku a není zaručena jeho funkčnost
+napříč tabulkovými procesory.
+
+Slouží výhradně jako historická reference vývoje projektu.
+
+
 # 📊 EPDŘ – Czech Driver Worktime Reference
 
 ## 📌 Data version: **v1.0.0**
