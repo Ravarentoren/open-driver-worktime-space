@@ -255,11 +255,17 @@ It is designed for maximum cross-compatibility across spreadsheet applications
 (LibreOffice / Collabora Office / Microsoft Excel / Google Sheets).
 
 
-### 🔗 Stable release for download (XLSX):
+### 🔗 Reference spreadsheet (stable, immutable)
 
-https://github.com/Ravarentoren/open-driver-worktime-space/releases/tag/epdr-v1.0.0
+**EPDŘ – Driver Worktime Records (v2.0.0)**
+Reference spreadsheet for professional drivers’ worktime recording.
 
+- Immutable Git tag:
+  https://github.com/Ravarentoren/open-driver-worktime-space/tree/epdr-v2.0.0
 
-Licensed under the Apache License, Version 2.0.
+- Direct download (XLSX):
+  https://raw.githubusercontent.com/Ravarentoren/open-driver-worktime-space/epdr-v2.0.0/reference/epdř/v2.0.0/EPDŘ_reference_ODWS_v2.0.0.xlsx
+
+Documentation and SHA-256 checksum are provided in the README within the tag.
 
 ---
