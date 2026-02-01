@@ -51,17 +51,6 @@ and immutable **external reference artifact**.
 
 ---
 
-## 📥 Download (immutable tag)
-
-The reference table can be downloaded directly from the tagged release:
-
-🔗 **EPDŘ reference data v1.0.0 (via release v1.0.1):**  
-https://github.com/Ravarentoren/open-driver-worktime-space/blob/epdr-v1.0.1/reference/epdř/EPDŘ/EPDŘ_reference_v1.0.0.xlsx
-
-🔒 This link points to an **immutable Git tag** and will never change.
-
----
-
 ## 📜 Normative context (ODWS)
 
 This reference artifact is governed by the ODWS normative rule:
